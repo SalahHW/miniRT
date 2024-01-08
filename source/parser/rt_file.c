@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   rt_file.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 04:32:04 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/08 10:44:15 by sbouheni         ###   ########.fr       */
+/*   Created: 2024/01/09 00:20:47 by sbouheni          #+#    #+#             */
+/*   Updated: 2024/01/09 00:25:07 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/miniRT.h"
+#include "../../include/miniRT.h"
 
-int	main(int argc, char **argv)
+void	parse_rt_file(char *file_name)
 {
-	parse_args(argc, argv);
-	parse_rt_file(argv[1]);
-
-
-
-
-	ft_printf("miniRT exited successfully\n");
-	return (0);
+	
 }

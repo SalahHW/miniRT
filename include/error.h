@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   error.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 04:32:04 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/08 10:44:15 by sbouheni         ###   ########.fr       */
+/*   Created: 2023/12/27 04:49:46 by sbouheni          #+#    #+#             */
+/*   Updated: 2024/01/08 11:06:43 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/miniRT.h"
+#ifndef ERROR_H
+# define ERROR_H
 
-int	main(int argc, char **argv)
-{
-	parse_args(argc, argv);
-	parse_rt_file(argv[1]);
+int	print_exit_error(char *error_msg);
 
-
-
-
-	ft_printf("miniRT exited successfully\n");
-	return (0);
-}
+#endif

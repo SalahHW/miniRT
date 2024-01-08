@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 04:32:04 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/08 10:44:15 by sbouheni         ###   ########.fr       */
+/*   Created: 2023/12/27 05:15:20 by sbouheni          #+#    #+#             */
+/*   Updated: 2024/01/08 10:44:34 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/miniRT.h"
+#ifndef PARSER_H
+# define PARSER_H
 
-int	main(int argc, char **argv)
-{
-	parse_args(argc, argv);
-	parse_rt_file(argv[1]);
+void parse_args(int argc, char **argv);
+void parse_rt_file(char *file_path);
 
-
-
-
-	ft_printf("miniRT exited successfully\n");
-	return (0);
-}
+#endif

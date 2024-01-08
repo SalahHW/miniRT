@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   miniRT.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 04:32:04 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/08 10:44:15 by sbouheni         ###   ########.fr       */
+/*   Created: 2023/12/27 04:34:16 by sbouheni          #+#    #+#             */
+/*   Updated: 2024/01/08 11:08:35 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/miniRT.h"
+#ifndef MINIRT_H
+# define MINIRT_H
 
-int	main(int argc, char **argv)
-{
-	parse_args(argc, argv);
-	parse_rt_file(argv[1]);
+# include "./libft/libft.h"
+# include "./minilibx-linux/mlx.h"
+# include "error.h"
+# include "parser.h"
+# include "window.h"
 
-
-
-
-	ft_printf("miniRT exited successfully\n");
-	return (0);
-}
+#endif

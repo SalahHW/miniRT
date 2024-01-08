@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   window.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 04:32:04 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/08 10:44:15 by sbouheni         ###   ########.fr       */
+/*   Created: 2024/01/04 10:47:11 by sbouheni          #+#    #+#             */
+/*   Updated: 2024/01/04 10:54:20 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../include/miniRT.h"
+#ifndef WINDOW_H
+# define WINDOW_H
 
-int	main(int argc, char **argv)
+typedef struct s_window
 {
-	parse_args(argc, argv);
-	parse_rt_file(argv[1]);
+	void	*mlx_ptr;
+	void	*window;
+}			t_window;
 
-
-
-
-	ft_printf("miniRT exited successfully\n");
-	return (0);
-}
+#endif
