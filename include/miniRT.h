@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 04:34:16 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/08 11:08:35 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/09 00:43:55 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include "./libft/libft.h"
 # include "./minilibx-linux/mlx.h"
-# include "error.h"
-# include "parser.h"
+# include "../source/error/error.h"
+# include "../source/parser/parser.h"
 # include "window.h"
 
 #endif
