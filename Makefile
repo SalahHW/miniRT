@@ -6,7 +6,7 @@
 #    By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/27 04:27:06 by sbouheni          #+#    #+#              #
-#    Updated: 2024/01/09 00:20:41 by sbouheni         ###   ########.fr        #
+#    Updated: 2024/01/09 00:59:54 by sbouheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,6 @@ MLX						=	./include/minilibx-linux/
 
 SRCS					=	source/main.c									\
 							source/error/error.c							\
-							source/parser/arguments.c						\
-							source/parser/rt_file.c							\
 
 OBJS					=	$(SRCS:.c=.o)
 
