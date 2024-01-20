@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 04:51:25 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/20 03:18:55 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/20 03:23:30 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,13 +94,11 @@ typedef struct s_element
 		t_cylinder			cylinder;
 	} u_element;
 	struct s_element		*next;
-	struct s_element		*prev;
 }							t_element;
 
 typedef struct s_element_list
 {
 	t_element				*head;
-	t_element				*tail;
 }							t_element_list;
 
 
