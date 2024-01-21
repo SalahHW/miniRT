@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 03:25:58 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/19 05:53:36 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/21 07:41:36 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ t_element_list	*extract_rt_file_data(t_rt_file *rt_file)
 	while (line)
 	{
 		if (!is_empty_line(line))
-			element = process_line(line);
+			element = get_element(line, element_list);
+		if (element)
+			add_element(element_list, element);
 		free(line);
 		line = get_next_line(rt_file->fd);
 	}
