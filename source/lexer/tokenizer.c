@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 02:13:56 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/19 06:44:46 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/21 08:05:32 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,18 +31,20 @@ static t_element_identifier	get_element_type(char *token_start, char *token_end)
 	else if (ft_strncmp(token, "cy", 3) == 0)
 		type = cylinder;
 	else
-		type = null;
+		return (-1);
 	free(token);
 	return (type);
 }
 
-void	process_line(char *line)
+t_element	*get_element(char *line, t_element_list *element_list)
 {
 	char		*token_start;
 	char		*token_end;
 	t_element	*element;
 
 	element = malloc(sizeof(t_element));
+	if (!element)
+		return (NULL);
 	while (*line && is_white_space(*line))
 		line++;
 	token_start = line;
@@ -52,7 +54,14 @@ void	process_line(char *line)
 	if (token_start == token_end)
 	{
 		free(element);
-		return;
+		return (NULL);
 	}
 	element->identifier = get_element_type(token_start, token_end);
+	if (element->identifier == -1)
+	{
+		free(element);
+		return (NULL);
+	}
+	process_element(line, element);
+	return (element);
 }
