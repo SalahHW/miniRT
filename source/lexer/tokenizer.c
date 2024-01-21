@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/14 02:13:56 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/21 08:05:32 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/21 08:23:46 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,6 @@ static t_element_identifier	get_element_type(char *token_start, char *token_end)
 		type = plane;
 	else if (ft_strncmp(token, "cy", 3) == 0)
 		type = cylinder;
-	else
-		return (-1);
 	free(token);
 	return (type);
 }
@@ -57,11 +55,7 @@ t_element	*get_element(char *line, t_element_list *element_list)
 		return (NULL);
 	}
 	element->identifier = get_element_type(token_start, token_end);
-	if (element->identifier == -1)
-	{
-		free(element);
-		return (NULL);
-	}
 	process_element(line, element);
+	add_element(element_list, element);
 	return (element);
 }
