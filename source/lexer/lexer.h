@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 01:04:46 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/20 03:36:02 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/21 08:03:12 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,14 @@ t_element_list					*extract_rt_file_data(t_rt_file *rt_file);
 t_element_list					*init_element_list(void);
 void							add_element(t_element_list *list,
 									t_element *element);
+void							clear_element_list(t_element_list *list);
 
 // ========== FILE READING UTILS ========== //
 // Check if line is empty
 int								is_empty_line(char *line);
 
-void							process_line(char *line);
+t_element						*get_element(char *line, t_element_list *list);
+
+void							process_element(char *line, t_element *element);
 
 #endif
