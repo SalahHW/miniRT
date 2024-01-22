@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 01:04:46 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/22 02:15:41 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/22 02:23:32 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ void							run_lexer(char *file_path);
 // Open file and return file descriptor
 void							open_rt_file(t_rt_file *rt_file);
 // Read file and return data
-t_element_list					*extract_rt_file_data(t_rt_file *rt_file);
+void							extract_rt_file_data(t_rt_file *rt_file,
+									t_element_list *list);
 
 // ========== FILE_READING ===========//
 // Init a NULL list of element
