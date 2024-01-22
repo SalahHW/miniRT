@@ -25,6 +25,7 @@ t_element_list	*extract_rt_file_data(t_rt_file *rt_file)
 	t_element_list	*element_list;
 	t_element		*element;
 
+	line = NULL;
 	element_list = init_element_list();
 	line = get_next_line(rt_file->fd);
 	while (line)
