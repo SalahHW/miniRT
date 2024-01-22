@@ -19,9 +19,23 @@ int is_empty_line(char *line)
 	i = 0;
 	while (line[i])
 	{
-		if (!is_white_space(line[i]))
+		if (!is_white_space(line[i]) && line[i] != '\n')
 			return (0);
 		i++;
 	}
 	return (1);
+}
+
+char *skip_white_space(char *str)
+{
+	while (*str && is_white_space(*str))
+		str++;
+	return (str);
+}
+
+char *skip_non_white_space(char *str)
+{
+	while (*str && !is_white_space(*str))
+		str++;
+	return (str);
 }
