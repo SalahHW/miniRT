@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 15:43:37 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/18 08:46:20 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/22 00:51:08 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	run_lexer(char *file_path)
 {
-	t_rt_file	rt_file;
+	t_rt_file		rt_file;
+	t_element_list	*t_element_list;
 
 	rt_file.file_name = file_path;
 	open_rt_file(&rt_file);
-	extract_rt_file_data(&rt_file);
+	t_element_list = extract_rt_file_data(&rt_file);
 }
