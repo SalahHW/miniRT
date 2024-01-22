@@ -39,6 +39,10 @@ void							clear_element_list(t_element_list *list);
 // ========== FILE READING UTILS ========== //
 // Check if line is empty
 int								is_empty_line(char *line);
+// Skip white space and return the next char
+char *skip_white_space(char *str);
+// Skip non white space and return the next char
+char *skip_non_white_space(char *str);
 
 t_element						*get_element(char *line, t_element_list *list);
 

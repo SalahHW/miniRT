@@ -40,22 +40,20 @@ t_element	*get_element(char *line, t_element_list *element_list)
 	char		*token_end;
 	t_element	*element;
 
-	element = malloc(sizeof(t_element));
-	if (!element)
-		return (NULL);
-	while (*line && is_white_space(*line))
-		line++;
-	token_start = line;
-	while (*line && !is_white_space(*line))
-		line++;
-	token_end = line;
+	
+	token_start = skip_white_space(line);
+	token_end = skip_non_white_space(token_start);
 	if (token_start == token_end)
+		return (NULL);
+	element = init_element();
+	if (!element)
+		return (NULL);	
+	element->identifier = get_element_type(token_start, token_end);
+	if (element->identifier == unknown)
 	{
 		free(element);
 		return (NULL);
 	}
-	element->identifier = get_element_type(token_start, token_end);
 	process_element(line, element);
-	add_element(element_list, element);
 	return (element);
 }
