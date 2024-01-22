@@ -25,6 +25,7 @@ SRCS					=	source/main.c									\
 							source/lexer/file_reading.c						\
 							source/lexer/file_reading_utils.c				\
 							source/lexer/tokenizer.c						\
+							source/element/element.c						\
 							source/element/element_list.c					\
 							source/element/element_process.c				\
 							source/element/ambient_light.c					\
