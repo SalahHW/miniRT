@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 04:51:25 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/21 08:18:47 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/22 02:14:41 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 typedef enum e_element_identifier
 {
+	unknown,
 	ambient_light,
 	camera,
 	light,
@@ -101,6 +102,7 @@ typedef struct s_element_list
 	t_element				*tail;
 }							t_element_list;
 
+t_element					*init_element(void);
 void						process_ambient_light(char *line,
 								t_element *element);
 void						process_camera(char *line, t_element *element);

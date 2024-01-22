@@ -40,14 +40,13 @@ t_element	*get_element(char *line, t_element_list *element_list)
 	char		*token_end;
 	t_element	*element;
 
-	
 	token_start = skip_white_space(line);
 	token_end = skip_non_white_space(token_start);
 	if (token_start == token_end)
 		return (NULL);
 	element = init_element();
 	if (!element)
-		return (NULL);	
+		return (NULL);
 	element->identifier = get_element_type(token_start, token_end);
 	if (element->identifier == unknown)
 	{

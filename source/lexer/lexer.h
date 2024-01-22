@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 01:04:46 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/21 08:03:12 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/22 02:15:41 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ void							clear_element_list(t_element_list *list);
 // Check if line is empty
 int								is_empty_line(char *line);
 // Skip white space and return the next char
-char *skip_white_space(char *str);
+char							*skip_white_space(char *str);
 // Skip non white space and return the next char
-char *skip_non_white_space(char *str);
+char							*skip_non_white_space(char *str);
 
 t_element						*get_element(char *line, t_element_list *list);
 

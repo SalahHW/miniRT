@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   element_list.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/22 02:15:54 by sbouheni          #+#    #+#             */
+/*   Updated: 2024/01/22 02:15:56 by sbouheni         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../../include/miniRT.h"
 
 t_element_list	*init_element_list(void)
@@ -27,10 +39,10 @@ void	add_element(t_element_list *list, t_element *new_element)
 	}
 }
 
-void clear_element_list(t_element_list *list)
+void	clear_element_list(t_element_list *list)
 {
-	t_element *element;
-	t_element *next_element;
+	t_element	*element;
+	t_element	*next_element;
 
 	element = list->head;
 	while (element)

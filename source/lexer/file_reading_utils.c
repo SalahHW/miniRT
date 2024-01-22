@@ -6,13 +6,13 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/13 09:15:51 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/13 09:16:59 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/22 02:15:27 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
 
-int is_empty_line(char *line)
+int	is_empty_line(char *line)
 {
 	int	i;
 
@@ -26,14 +26,14 @@ int is_empty_line(char *line)
 	return (1);
 }
 
-char *skip_white_space(char *str)
+char	*skip_white_space(char *str)
 {
 	while (*str && is_white_space(*str))
 		str++;
 	return (str);
 }
 
-char *skip_non_white_space(char *str)
+char	*skip_non_white_space(char *str)
 {
 	while (*str && !is_white_space(*str))
 		str++;
