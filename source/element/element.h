@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 04:51:25 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/22 02:14:41 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/23 02:10:15 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,12 +103,12 @@ typedef struct s_element_list
 }							t_element_list;
 
 t_element					*init_element(void);
-void						process_ambient_light(char *line,
+void						process_ambient_light(char **data,
 								t_element *element);
-void						process_camera(char *line, t_element *element);
-void						process_light(char *line, t_element *element);
-void						process_sphere(char *line, t_element *element);
-void						process_plane(char *line, t_element *element);
-void						process_cylinder(char *line, t_element *element);
+void						process_camera(char **data, t_element *element);
+void						process_light(char **data, t_element *element);
+void						process_sphere(char **data, t_element *element);
+void						process_plane(char **data, t_element *element);
+void						process_cylinder(char **data, t_element *element);
 
 #endif

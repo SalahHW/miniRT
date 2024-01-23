@@ -6,12 +6,12 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 08:30:58 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/22 02:14:51 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/23 02:11:44 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
 
-void	process_light(char *line, t_element *element)
+void	process_light(char **data, t_element *element)
 {
 }

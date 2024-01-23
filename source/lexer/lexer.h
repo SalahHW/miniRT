@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 01:04:46 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/22 02:23:32 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/23 02:08:25 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,6 @@ char							*skip_non_white_space(char *str);
 
 t_element						*get_element(char *line, t_element_list *list);
 
-void							process_element(char *line, t_element *element);
+void							process_element(char **data, t_element *element);
 
 #endif

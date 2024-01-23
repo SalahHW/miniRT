@@ -6,12 +6,12 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 08:30:32 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/22 02:14:32 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/23 02:11:05 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
 
-void	process_camera(char *line, t_element *element)
+void	process_camera(char **data, t_element *element)
 {
 }
