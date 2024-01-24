@@ -34,6 +34,7 @@ SRCS					=	source/main.c									\
 							source/element/sphere.c							\
 							source/element/plane.c							\
 							source/element/cylinder.c						\
+							source/utils/ft_atof.c							\
 
 OBJS					=	$(SRCS:.c=.o)
 
