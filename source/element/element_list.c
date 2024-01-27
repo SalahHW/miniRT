@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   element_list.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 02:15:54 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/22 02:15:56 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/27 03:23:21 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_element_list	*init_element_list(void)
 	t_element_list	*element_list;
 
 	element_list = malloc(sizeof(t_element_list));
+	if (!element_list)
+		return (NULL);
 	element_list->head = NULL;
 	element_list->tail = NULL;
 	return (element_list);
