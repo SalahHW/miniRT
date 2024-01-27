@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 04:32:04 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/27 03:07:54 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/27 03:21:52 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,10 @@ static void	check_args(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
+	t_context	*context;
+	
 	check_args(argc, argv);
+	context = init_context();
 	run_lexer(argv[1]);
 	return (0);
 }
