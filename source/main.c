@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 04:32:04 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/27 03:21:52 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/27 03:48:26 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int	main(int argc, char **argv)
 	
 	check_args(argc, argv);
 	context = init_context();
-	run_lexer(argv[1]);
+	context->rt_file->file_path = argv[1];
+	if (run_lexer(context) == FAILURE)
+		lexer_error(context);
 	return (0);
 }
