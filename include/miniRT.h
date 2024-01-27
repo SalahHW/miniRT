@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 04:34:16 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/27 03:43:33 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/27 06:55:56 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,7 @@ typedef struct s_context
 	t_rt_file		*rt_file;
 	t_element_list	*element_list;
 }					t_context;
+
+t_context			*init_context(void);
 
 #endif
