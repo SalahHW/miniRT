@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 01:04:46 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/23 02:08:25 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/27 03:28:43 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ typedef struct s_element_list	t_element_list;
 
 typedef struct s_rt_file
 {
-	char						*file_name;
+	char						*file_path;
 	int							fd;
 }								t_rt_file;
 
