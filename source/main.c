@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 04:32:04 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/27 02:39:28 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/27 03:07:54 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,5 @@ int	main(int argc, char **argv)
 {
 	check_args(argc, argv);
 	run_lexer(argv[1]);
-//	======================
-	ft_printf("miniRT exited successfully\n");
 	return (0);
 }
