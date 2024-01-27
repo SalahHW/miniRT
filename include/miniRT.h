@@ -6,12 +6,15 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 04:34:16 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/27 03:14:38 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/27 03:43:33 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINIRT_H
 # define MINIRT_H
+
+# define SUCCESS 0
+# define FAILURE -1
 
 # include "../source/element/element.h"
 # include "../source/error/error.h"
