@@ -3,36 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   file_reading.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 03:25:58 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/22 02:23:01 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/27 06:31:21 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
 
-void	open_rt_file(t_rt_file *rt_file)
+int	open_rt_file(t_rt_file *rt_file)
 {
-	rt_file->fd = open(rt_file->file_name, O_RDONLY);
+	rt_file->fd = open(rt_file->file_path, O_RDONLY);
 	if (rt_file->fd < 0)
-		print_exit_error("Can't open file");
+	{
+		print_error("Unable to open file");
+		return (FAILURE);
+	}
 }
 
-void	extract_rt_file_data(t_rt_file *rt_file, t_element_list *element_list)
+int	extract_rt_file_data(t_context *context)
 {
-	char		*line;
-	t_element	*element;
-
-	line = NULL;
-	line = get_next_line(rt_file->fd);
-	while (line)
+	context->rt_file->current_line = get_next_line(context->rt_file->fd);
+	while (context->rt_file->current_line)
 	{
-		if (!is_empty_line(line))
-			element = get_element(line, element_list);
-		if (element)
-			add_element(element_list, element);
-		free(line);
-		line = get_next_line(rt_file->fd);
+		if (!is_empty_line(context->rt_file->current_line))
+		{
+			if (extract_element(context) == FAILURE)
+				return (FAILURE);
+		}
+		free(context->rt_file->current_line);
+		context->rt_file->current_line = get_next_line(context->rt_file->current_line);
 	}
+	free(context->rt_file->current_line);
+	return (SUCCESS);
 }
