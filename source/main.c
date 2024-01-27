@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 04:32:04 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/18 15:35:47 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/27 02:39:28 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	is_rt_file(char *file_name)
 		return (0);
 }
 
-static void	parse_args(int argc, char **argv)
+static void	check_args(int argc, char **argv)
 {
 	if (argc < 2)
 		print_exit_error("No file specified");
@@ -37,7 +37,7 @@ static void	parse_args(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
-	parse_args(argc, argv);
+	check_args(argc, argv);
 	run_lexer(argv[1]);
 //	======================
 	ft_printf("miniRT exited successfully\n");
