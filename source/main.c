@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 04:32:04 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/27 03:48:26 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/28 05:06:30 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,10 @@ static int	is_rt_file(char *file_name)
 
 	extension = ft_strchr(file_name, '.');
 	if (extension == NULL)
-		return (0);
-	if (!ft_strncmp(extension, ".rt", 4))
-		return (1);
-	else
-		return (0);
+		return (FAILURE);
+	if (ft_strncmp(extension, ".rt", 4))
+		return (FAILURE);
+	return (SUCCESS);
 }
 
 static void	check_args(int argc, char **argv)
@@ -31,7 +30,7 @@ static void	check_args(int argc, char **argv)
 		print_exit_error("No file specified");
 	else if (argc > 3)
 		print_exit_error("Too many arguments");
-	if (!is_rt_file(argv[1]))
+	if (is_rt_file(argv[1]) == FAILURE)
 		print_exit_error("File is not a .rt extension");
 }
 
