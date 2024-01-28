@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+         #
+#    By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/27 04:27:06 by sbouheni          #+#    #+#              #
-#    Updated: 2024/01/21 08:37:53 by sbouheni         ###   ########.fr        #
+#    Updated: 2024/01/27 07:25:21 by sbouheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,11 +21,14 @@ MLX						=	./include/minilibx-linux/
 
 SRCS					=	source/main.c									\
 							source/error/error.c							\
+							source/error/lexer_error.c						\
+							source/ressource/context.c						\
 							source/lexer/lexer.c							\
 							source/lexer/file_reading.c						\
 							source/lexer/file_reading_utils.c				\
-							source/lexer/tokenizer.c						\
 							source/element/element.c						\
+							source/element/element_extraction.c				\
+							source/element/element_type.c					\
 							source/element/element_list.c					\
 							source/element/element_process.c				\
 							source/element/ambient_light.c					\
