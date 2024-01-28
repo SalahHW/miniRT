@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   element.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 02:14:10 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/22 02:14:17 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/28 06:24:09 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,20 @@ t_element	*init_element(void)
 	new_element->identifier = unknown;
 	new_element->next = NULL;
 	return (new_element);
+}
+
+void clear_element(t_element *element)
+{
+	if (element->identifier == ambient_light)
+		clear_ambient_light(element);
+	else if (element->identifier == camera)
+		clear_camera(element);
+	else if (element->identifier == light)
+		clear_light(element);
+	else if (element->identifier == sphere)
+		clear_sphere(element);
+	else if (element->identifier == plane)
+		clear_plane(element);
+	else if (element->identifier == cylinder)
+		clear_cylinder(element);
 }
