@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 04:51:25 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/28 06:18:52 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/28 06:25:45 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,11 +106,14 @@ typedef struct s_element_list
 }							t_element_list;
 
 t_element					*init_element(void);
+void						clear_element(t_element *element);
 t_element_list				*init_element_list(void);
+void 						clear_element_list(t_element_list *list);
 int							extract_element(t_context *context);
 t_element_identifier		get_element_type(char *str);
 void						add_element(t_element_list *list,
 								t_element *element);
+								
 int							process_element(char **data, t_element *element);
 void						process_ambient_light(char **data,
 								t_element *element);
