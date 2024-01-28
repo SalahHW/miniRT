@@ -6,13 +6,14 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 01:04:46 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/27 06:05:39 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/27 07:00:15 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LEXER_H
 # define LEXER_H
 
+typedef struct s_context		t_context;
 typedef struct s_element		t_element;
 typedef struct s_element_list	t_element_list;
 
