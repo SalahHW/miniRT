@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 05:44:29 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/28 05:52:38 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/28 06:51:47 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,9 @@ t_decimal	*new_decimal(int integer, int decimal)
 	new_decimal->integer = integer;
 	new_decimal->decimal = decimal;
 	return (new_decimal);
+}
+
+void		clear_decimal(t_decimal *decimal)
+{
+	free(decimal);
 }
