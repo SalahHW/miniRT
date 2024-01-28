@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   element_process.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 06:37:55 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/23 02:09:32 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/27 07:20:31 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
 
-void	process_element(char **data, t_element *element)
+int	process_element(char **data, t_element *element)
 {
 	if (element->identifier == ambient_light)
 		process_ambient_light(data, element);
