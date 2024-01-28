@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 04:51:25 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/28 06:03:55 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/28 06:18:52 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ typedef struct s_cylinder
 typedef struct s_element
 {
 	t_element_identifier	identifier;
-	union
+	union u_element
 	{
 		t_ambient_light		ambient_light;
 		t_camera			camera;
