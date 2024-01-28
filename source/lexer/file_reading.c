@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 03:25:58 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/27 06:31:21 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/27 07:10:06 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	open_rt_file(t_rt_file *rt_file)
 		print_error("Unable to open file");
 		return (FAILURE);
 	}
+	return (SUCCESS);
 }
 
 int	extract_rt_file_data(t_context *context)
@@ -33,7 +34,7 @@ int	extract_rt_file_data(t_context *context)
 				return (FAILURE);
 		}
 		free(context->rt_file->current_line);
-		context->rt_file->current_line = get_next_line(context->rt_file->current_line);
+		context->rt_file->current_line = get_next_line(context->rt_file->fd);
 	}
 	free(context->rt_file->current_line);
 	return (SUCCESS);
