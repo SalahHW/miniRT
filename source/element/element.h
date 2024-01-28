@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 04:51:25 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/28 05:57:14 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/28 06:03:55 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define ELEMENT_H
 
 typedef struct s_context	t_context;
+typedef struct s_decimal	t_decimal;
 
 typedef enum e_element_identifier
 {
@@ -28,9 +29,9 @@ typedef enum e_element_identifier
 
 typedef struct s_vector
 {
-	double					x;
-	double					y;
-	double					z;
+	t_decimal				*x;
+	t_decimal				*y;
+	t_decimal				*z;
 }							t_vector;
 
 typedef struct s_color
@@ -42,7 +43,7 @@ typedef struct s_color
 
 typedef struct s_ambient_light
 {
-	double					intensity;
+	t_decimal				*intensity;
 	t_color					color;
 }							t_ambient_light;
 
@@ -56,14 +57,14 @@ typedef struct s_camera
 typedef struct s_light
 {
 	t_vector				position;
-	double					brightness;
+	t_decimal				*brightness;
 	t_color					color;
 }							t_light;
 
 typedef struct s_sphere
 {
 	t_vector				position;
-	double					diameter;
+	t_decimal				*diameter;
 	t_color					color;
 }							t_sphere;
 
@@ -78,8 +79,8 @@ typedef struct s_cylinder
 {
 	t_vector				position;
 	t_vector				direction;
-	double					radius;
-	double					height;
+	t_decimal				*radius;
+	t_decimal				*height;
 	t_color					color;
 }							t_cylinder;
 
