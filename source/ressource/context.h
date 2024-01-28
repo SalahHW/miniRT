@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   miniRT.h                                           :+:      :+:    :+:   */
+/*   context.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 04:34:16 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/27 07:15:47 by sbouheni         ###   ########.fr       */
+/*   Created: 2024/01/27 07:04:19 by sbouheni          #+#    #+#             */
+/*   Updated: 2024/01/27 07:21:41 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINIRT_H
-# define MINIRT_H
+#ifndef CONTEXT_H
+# define CONTEXT_H
 
-# define SUCCESS 0
-# define FAILURE -1
+typedef struct s_rt_file t_rt_file;
+typedef struct s_element_list t_element_list;
 
-# include "../source/ressource/context.h"
-# include "../source/element/element.h"
-# include "../source/error/error.h"
-# include "../source/lexer/lexer.h"
-# include "../source/parser/parser.h"
-# include "../source/utils/utils.h"
-# include "./libft/libft.h"
-// # include "./minilibx-linux/mlx.h"
-# include <fcntl.h>
+typedef struct s_context
+{
+	t_rt_file		*rt_file;
+	t_element_list	*element_list;
+}					t_context;
+
+t_context			*init_context(void);
+void				clear_context(t_context *context);
 
 #endif
