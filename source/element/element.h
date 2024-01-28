@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   element.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
+/*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 04:51:25 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/23 02:10:15 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/27 07:16:22 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,12 @@ typedef struct s_element_list
 }							t_element_list;
 
 t_element					*init_element(void);
+t_element_list				*init_element_list(void);
+int 						extract_element(t_context *context);
+t_element_identifier		get_element_type(char *str);
+void						add_element(t_element_list *list,
+								t_element *element);
+int 						process_element(char **data, t_element *element);
 void						process_ambient_light(char **data,
 								t_element *element);
 void						process_camera(char **data, t_element *element);
