@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   miniRT.h                                           :+:      :+:    :+:   */
+/*   decimal.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 04:34:16 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/28 05:54:44 by sbouheni         ###   ########.fr       */
+/*   Created: 2024/01/28 05:44:29 by sbouheni          #+#    #+#             */
+/*   Updated: 2024/01/28 05:52:38 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINIRT_H
-# define MINIRT_H
+#include "../../include/miniRT.h"
 
-# define SUCCESS 0
-# define FAILURE -1
+t_decimal	*new_decimal(int integer, int decimal)
+{
+	t_decimal *new_decimal;
 
-# include "../source/decimal/decimal.h"
-# include "../source/element/element.h"
-# include "../source/error/error.h"
-# include "../source/lexer/lexer.h"
-# include "../source/parser/parser.h"
-# include "../source/ressource/context.h"
-# include "./libft/libft.h"
-// # include "./minilibx-linux/mlx.h"
-# include <fcntl.h>
-
-#endif
+	new_decimal = (t_decimal *)malloc(sizeof(t_decimal));
+	if (!new_decimal)
+		return (NULL);
+	new_decimal->integer = integer;
+	new_decimal->decimal = decimal;
+	return (new_decimal);
+}

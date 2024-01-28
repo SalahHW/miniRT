@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   miniRT.h                                           :+:      :+:    :+:   */
+/*   decimal.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 04:34:16 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/28 05:54:44 by sbouheni         ###   ########.fr       */
+/*   Created: 2024/01/28 05:42:04 by sbouheni          #+#    #+#             */
+/*   Updated: 2024/01/28 05:51:33 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINIRT_H
-# define MINIRT_H
+#ifndef DECIMAL_H
+# define DECIMAL_H
 
-# define SUCCESS 0
-# define FAILURE -1
+typedef struct s_decimal
+{
+	int	integer;
+	int	decimal;
+}		t_decimal;
 
-# include "../source/decimal/decimal.h"
-# include "../source/element/element.h"
-# include "../source/error/error.h"
-# include "../source/lexer/lexer.h"
-# include "../source/parser/parser.h"
-# include "../source/ressource/context.h"
-# include "./libft/libft.h"
-// # include "./minilibx-linux/mlx.h"
-# include <fcntl.h>
+t_decimal *new_decimal(int integer, int decimal);
 
 #endif
