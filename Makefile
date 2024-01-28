@@ -6,7 +6,7 @@
 #    By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/27 04:27:06 by sbouheni          #+#    #+#              #
-#    Updated: 2024/01/27 07:25:21 by sbouheni         ###   ########.fr        #
+#    Updated: 2024/01/28 05:55:12 by sbouheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,6 @@ SRCS					=	source/main.c									\
 							source/element/sphere.c							\
 							source/element/plane.c							\
 							source/element/cylinder.c						\
-							source/utils/ft_atof.c							\
 
 OBJS					=	$(SRCS:.c=.o)
 
