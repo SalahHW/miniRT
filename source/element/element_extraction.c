@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 06:39:22 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/27 07:18:14 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/28 07:56:13 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,12 @@ int    extract_element(t_context *context)
         p_free_splited_str(data);
         return (FAILURE);
     }
-    process_element(data, element);
+    if (process_element(data, element) == FAILURE)
+    {
+        clear_element(element);
+        p_free_splited_str(data);
+        return (FAILURE);
+    }
     p_free_splited_str(data);
     add_element(context->element_list, element);
     return (SUCCESS);
