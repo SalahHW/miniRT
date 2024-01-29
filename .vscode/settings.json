@@ -1,0 +1,6 @@
+{
+    "files.exclude": {
+        "**/libft": true,
+        "**/minilibx-linux": true
+    }
+}
