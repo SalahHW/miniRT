@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 05:42:04 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/28 06:51:40 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/29 07:24:21 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ typedef struct s_decimal
 }			t_decimal;
 
 t_decimal	*new_decimal(int integer, int decimal);
+t_decimal	*extract_decimal(char *str);
 void		clear_decimal(t_decimal *decimal);
 
 #endif
