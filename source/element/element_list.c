@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 02:15:54 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/28 06:21:38 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/29 06:54:58 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,5 @@ void	clear_element_list(t_element_list *list)
 		clear_element(element);
 		element = next_element;
 	}
+	free(list);
 }
