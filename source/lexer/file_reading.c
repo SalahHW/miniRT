@@ -6,21 +6,30 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 03:25:58 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/27 07:10:06 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/29 06:01:53 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
 
-int	open_rt_file(t_rt_file *rt_file)
+t_rt_file	*open_rt_file(char *file_path)
 {
-	rt_file->fd = open(rt_file->file_path, O_RDONLY);
-	if (rt_file->fd < 0)
+	t_rt_file	*file;
+
+	file = malloc(sizeof(t_rt_file));
+	if (!file)
+	{
+		print_error("Unable to allocate memory for rt file");
+		return (NULL);
+	}
+	file->fd = open(file_path, O_RDONLY);
+	if (file->fd < 0)
 	{
 		print_error("Unable to open file");
-		return (FAILURE);
+		free(file);
+		return (NULL);
 	}
-	return (SUCCESS);
+	return (file);
 }
 
 int	extract_rt_file_data(t_context *context)
@@ -36,6 +45,11 @@ int	extract_rt_file_data(t_context *context)
 		free(context->rt_file->current_line);
 		context->rt_file->current_line = get_next_line(context->rt_file->fd);
 	}
-	free(context->rt_file->current_line);
 	return (SUCCESS);
+}
+
+void	clear_file(t_rt_file *file)
+{
+	close(file->fd);
+	free(file);
 }
