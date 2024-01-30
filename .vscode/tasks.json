@@ -2,9 +2,9 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "make re",
+            "label": "make",
             "type": "shell",
-            "command": "make re",
+            "command": "make",
             "group": {
                 "kind": "build",
                 "isDefault": true
