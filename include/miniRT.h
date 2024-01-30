@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 04:34:16 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/28 05:54:44 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/01/29 08:33:09 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # include "../source/lexer/lexer.h"
 # include "../source/parser/parser.h"
 # include "../source/ressource/context.h"
+# include "../source/utils/utils.h"
 # include "./libft/libft.h"
 // # include "./minilibx-linux/mlx.h"
 # include <fcntl.h>
