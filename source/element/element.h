@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 04:51:25 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/01 04:59:33 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/01 05:07:34 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,8 @@ typedef struct s_sphere
 
 typedef struct s_plane
 {
-	t_vector				*point;
-	t_vector				*normal;
+	t_vector				*position;
+	t_vector				*direction;
 	t_color					*color;
 }							t_plane;
 
@@ -79,7 +79,7 @@ typedef struct s_cylinder
 {
 	t_vector				*position;
 	t_vector				*direction;
-	t_decimal				*radius;
+	t_decimal				*diameter;
 	t_decimal				*height;
 	t_color					*color;
 }							t_cylinder;
