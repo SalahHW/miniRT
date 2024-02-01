@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 06:37:55 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/27 07:20:31 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/01 04:57:24 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ int	process_element(char **data, t_element *element)
 		process_plane(data, element);
 	else if (element->identifier == cylinder)
 		process_cylinder(data, element);
+	return (SUCCESS);
 }
