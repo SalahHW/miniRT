@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 04:51:25 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/29 06:30:46 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/01 04:52:14 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,7 @@ t_element_list				*init_element_list(void);
 t_vector					*new_vector(t_decimal *x, t_decimal *y,
 								t_decimal *z);
 t_color						*new_color(int red, int green, int blue);
+t_color						*extract_color(char *str);
 
 void						clear_element_list(t_element_list *list);
 int							extract_element(t_context *context);
@@ -131,7 +132,7 @@ void						process_cylinder(char **data, t_element *element);
 void						clear_vector(t_vector *vector);
 void						clear_color(t_color *color);
 void						clear_element(t_element *element);
-void						clear_ambient_light(t_ambient_light *ambient_light);
+void						clear_ambient_light(t_element *element);
 void						clear_camera(t_camera *camera);
 void						clear_light(t_light *light);
 void						clear_sphere(t_sphere *sphere);
