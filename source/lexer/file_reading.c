@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 03:25:58 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/29 06:01:53 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/01 04:47:53 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int	extract_rt_file_data(t_context *context)
 
 void	clear_file(t_rt_file *file)
 {
+	if (file->current_line)
+		free(file->current_line);
 	close(file->fd);
 	free(file);
 }
