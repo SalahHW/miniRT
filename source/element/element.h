@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 04:51:25 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/01 04:52:14 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/01 04:59:33 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,10 +133,10 @@ void						clear_vector(t_vector *vector);
 void						clear_color(t_color *color);
 void						clear_element(t_element *element);
 void						clear_ambient_light(t_element *element);
-void						clear_camera(t_camera *camera);
-void						clear_light(t_light *light);
-void						clear_sphere(t_sphere *sphere);
-void						clear_plane(t_plane *plane);
-void						clear_cylinder(t_cylinder *cylinder);
+void						clear_camera(t_element *element);
+void						clear_light(t_element *element);
+void						clear_sphere(t_element *element);
+void						clear_plane(t_element *element);
+void						clear_cylinder(t_element *element);
 
 #endif
