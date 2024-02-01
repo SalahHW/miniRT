@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 05:44:29 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/29 07:22:42 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/01 04:45:00 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ t_decimal *extract_decimal(char *str)
 	char **split;
 
 	split = ft_split(str, '.');
-	if (!split || ft_strlen(split) != 2)
+	if (!split || split_length(split) != 2)
 		return (NULL);
-	if (!is_int_compatible(split[0] || !is_int_compatible(split[1])))
+	if (!is_int_compatible(split[0]) || !is_int_compatible(split[1]))
 	{
 		p_free_splited_str(split);
 		return (NULL);	
@@ -44,5 +44,6 @@ t_decimal *extract_decimal(char *str)
 
 void		clear_decimal(t_decimal *decimal)
 {
-	free(decimal);
+	if (decimal)
+		free(decimal);
 }
