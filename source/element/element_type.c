@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 07:11:37 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/27 07:12:06 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/03 02:54:42 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ t_element_identifier	get_element_type(char *str)
 {
 	t_element_identifier	type;
 
+	type = unknown;
 	if (ft_strncmp(str, "A", 2) == 0)
 		type = ambient_light;
 	else if (ft_strncmp(str, "C", 2) == 0)
