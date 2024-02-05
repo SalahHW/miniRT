@@ -6,14 +6,14 @@
 #    By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/27 04:27:06 by sbouheni          #+#    #+#              #
-#    Updated: 2024/01/29 08:33:42 by sbouheni         ###   ########.fr        #
+#    Updated: 2024/02/05 09:31:44 by sbouheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME					=	miniRT
 
 CC						=	gcc
-CFLAGS					=	-Wall -Wextra -g3 -fsanitize=address
+CFLAGS					=	-g3 -Wall -Wextra #-Werror
 DEBUGFLAGS				=	-g3
 
 LIBFT					=	./include/libft/libft.a
@@ -40,6 +40,12 @@ SRCS					=	source/main.c									\
 							source/element/sphere.c							\
 							source/element/plane.c							\
 							source/element/cylinder.c						\
+							source/parser/parser.c							\
+							source/parser/counter_check.c					\
+							source/parser/decimal_check.c					\
+							source/parser/color_check.c						\
+							source/parser/element_check.c					\
+							source/parser/ambient_light_check.c				\
 							source/utils/split_length.c						\
 
 OBJS					=	$(SRCS:.c=.o)
