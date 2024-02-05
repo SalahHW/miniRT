@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 04:51:25 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/01 13:02:08 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/05 08:19:33 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,13 @@ typedef struct s_element_list
 {
 	t_element				*head;
 	t_element				*tail;
+	int						count;
+	int						ambient_light_count;
+	int						camera_count;
+	int						light_count;
+	int						sphere_count;
+	int						plane_count;
+	int						cylinder_count;
 }							t_element_list;
 
 t_element					*init_element(void);
