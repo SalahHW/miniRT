@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 16:44:27 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/04 16:45:30 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/06 06:49:45 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ int check_color(t_color *color)
         return (FAILURE);
     if (color->blue < 0 || color->blue > 255)
         return (FAILURE);
+    return (SUCCESS);
 }
