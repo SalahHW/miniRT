@@ -6,7 +6,7 @@
 #    By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/27 04:27:06 by sbouheni          #+#    #+#              #
-#    Updated: 2024/02/05 09:31:44 by sbouheni         ###   ########.fr        #
+#    Updated: 2024/02/06 06:53:50 by sbouheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ MLX						=	./include/minilibx-linux/
 SRCS					=	source/main.c									\
 							source/error/error.c							\
 							source/error/lexer_error.c						\
+							source/error/parser_error.c						\
 							source/ressource/context.c						\
 							source/decimal/decimal.c						\
 							source/lexer/lexer.c							\

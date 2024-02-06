@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.h                                            :+:      :+:    :+:   */
+/*   parser_error.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/27 04:49:46 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/06 06:52:00 by sbouheni         ###   ########.fr       */
+/*   Created: 2024/02/06 06:52:40 by sbouheni          #+#    #+#             */
+/*   Updated: 2024/02/06 06:53:28 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERROR_H
-# define ERROR_H
+#include "../../include/miniRT.h"
 
-typedef struct s_context	t_context;
-
-// Print error_msg to std_err
-void    print_error(char *error_msg);
-// Print error_msg to std_err and exit the program
-void    print_exit_error(char *error_msg);
-
-void    lexer_error(t_context *context);
-
-void    parser_error(t_context *context, char *error_msg);
-
-#endif
+void parser_error(t_context *context, char *message)
+{
+    clear_context(context);
+    print_exit_error(message);
+}
