@@ -6,14 +6,14 @@
 #    By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/27 04:27:06 by sbouheni          #+#    #+#              #
-#    Updated: 2024/02/06 06:53:50 by sbouheni         ###   ########.fr        #
+#    Updated: 2024/02/06 18:31:37 by sbouheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME					=	miniRT
 
 CC						=	gcc
-CFLAGS					=	-g3 -Wall -Wextra #-Werror
+CFLAGS					=	-g3 -Wall -Wextra -fsanitize=address #-Werror
 DEBUGFLAGS				=	-g3
 
 LIBFT					=	./include/libft/libft.a
