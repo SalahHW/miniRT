@@ -6,55 +6,69 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 05:44:29 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/01 05:36:37 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/08 04:01:46 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
 
-t_decimal	*new_decimal(int integer, int decimal)
+int is_double_compatible(char *str)
 {
-	t_decimal *new_decimal;
+	int decimal_point;
+	int number;
 
-	new_decimal = (t_decimal *)malloc(sizeof(t_decimal));
-	if (!new_decimal)
-		return (NULL);
-	new_decimal->integer = integer;
-	new_decimal->decimal = decimal;
-	return (new_decimal);
+	decimal_point = 0;
+	number = 0;
+	if (!*str)
+		return (0);
+	if (*str == '-')
+		str++;
+	while (*str)
+	{
+		if (ft_isdigit(*str))
+			number = 1;
+		else if (*str == '.')
+		{
+			if (decimal_point)
+				return (0);
+			decimal_point = 1;
+		}
+		else
+			return (0);
+		str++;
+	}
+	return (number);
 }
 
-t_decimal *extract_decimal(char *str)
+double	string_to_double(char *str)
 {
-	t_decimal	*decimal;
-	char **split;
-	int integer_value;
-	int decimal_value;
+    double number;
+    int sign;
+    double factor;
 
-	decimal_value = 0;
-	split = ft_split(str, '.');
-	if (!split || split_length(split) > 2)
-		return (NULL);
-	if (!is_int_compatible(split[0]))
-	{
-		p_free_splited_str(split);
-		return (NULL);
-	
-	}
-	if (split_length(split) == 2 && !is_int_compatible(split[1]))
-	{
-		p_free_splited_str(split);
-		return (NULL);
-	}
-	integer_value = ft_atoi(split[0]);
-	if (split_length(split) == 2)
-		decimal_value = ft_atoi(split[1]);
-	p_free_splited_str(split);
-	return (new_decimal(integer_value, decimal_value));
-}
+    number = 0.0;
 
-void		clear_decimal(t_decimal *decimal)
-{
-	if (decimal)
-		free(decimal);
+    sign = 1;
+    factor = 1.0;
+    if (*str == '-')
+    {
+        sign *= -1;
+        str++;
+    }
+    while (ft_isdigit(*str))
+    {
+        number = number * 10 + (*str - '0');
+        str++;
+    }
+    if (*str == '.')
+    {
+        str++;
+        while (ft_isdigit(*str))
+        {
+            factor /= 10.0;
+            number = number + (*str - '0') * factor;
+            str++;
+        }
+    }
+    return (number * sign);
 }

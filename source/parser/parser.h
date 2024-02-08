@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 05:15:20 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/06 06:58:45 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/06 17:45:51 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 typedef struct s_context		t_context;
 typedef struct s_element_list	t_element_list;
 typedef struct s_element		t_element;
-typedef struct s_decimal		t_decimal;
 typedef struct s_color			t_color;
 
 void							run_parser(t_context *context);
@@ -31,9 +30,6 @@ int								check_ambient_light(t_element *element);
 // int check_sphere(t_element *element);
 // int check_plane(t_element *element);
 // int check_cylinder(t_element *element);
-
-int								check_decimal_range(t_decimal *decimal, int min,
-									int max);
 int								check_color(t_color *color);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 04:51:25 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/05 08:19:33 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/06 17:38:20 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define ELEMENT_H
 
 typedef struct s_context	t_context;
-typedef struct s_decimal	t_decimal;
 
 typedef enum e_element_identifier
 {
@@ -29,9 +28,9 @@ typedef enum e_element_identifier
 
 typedef struct s_vector
 {
-	t_decimal				*x;
-	t_decimal				*y;
-	t_decimal				*z;
+	double					x;
+	double					y;
+	double					z;
 }							t_vector;
 
 typedef struct s_color
@@ -43,7 +42,7 @@ typedef struct s_color
 
 typedef struct s_ambient_light
 {
-	t_decimal				*intensity;
+	double					intensity;
 	t_color					*color;
 }							t_ambient_light;
 
@@ -57,14 +56,14 @@ typedef struct s_camera
 typedef struct s_light
 {
 	t_vector				*position;
-	t_decimal				*brightness;
+	double					brightness;
 	t_color					*color;
 }							t_light;
 
 typedef struct s_sphere
 {
 	t_vector				*position;
-	t_decimal				*diameter;
+	double					diameter;
 	t_color					*color;
 }							t_sphere;
 
@@ -79,8 +78,8 @@ typedef struct s_cylinder
 {
 	t_vector				*position;
 	t_vector				*direction;
-	t_decimal				*diameter;
-	t_decimal				*height;
+	double					diameter;
+	double					height;
 	t_color					*color;
 }							t_cylinder;
 
@@ -116,8 +115,7 @@ typedef struct s_element_list
 t_element					*init_element(void);
 t_element_list				*init_element_list(void);
 
-t_vector					*new_vector(t_decimal *x, t_decimal *y,
-								t_decimal *z);
+t_vector					*new_vector(double x, double y, double z);
 t_vector					*extract_vector(char *str);
 t_color						*new_color(int red, int green, int blue);
 t_color						*extract_color(char *str);

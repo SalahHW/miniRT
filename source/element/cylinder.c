@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 08:30:43 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/02 18:42:31 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/06 17:47:57 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,5 @@ void clear_cylinder(t_element *element)
         return ;
     clear_vector(element->u_element.cylinder.position);
     clear_vector(element->u_element.cylinder.direction);
-    clear_decimal(element->u_element.cylinder.diameter);
-    clear_decimal(element->u_element.cylinder.height);
     clear_color(element->u_element.cylinder.color);
 }

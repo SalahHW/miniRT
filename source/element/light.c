@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 08:30:58 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/02 18:48:26 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/06 17:48:07 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,5 @@ void clear_light(t_element *element)
     if (!element->initialized)
         return ;
     clear_vector(element->u_element.light.position);
-    clear_decimal(element->u_element.light.brightness);
     clear_color(element->u_element.light.color);
 }

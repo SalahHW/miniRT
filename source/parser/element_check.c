@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 15:45:41 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/05 09:37:56 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/06 17:50:00 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int check_element(t_element *element)
     //     check_plane(element);
     // else if (element->identifier == cylinder)
     //     check_cylinder(element);
+    return (SUCCESS);
 }
 
 void    check_element_list(t_element_list *element_list)
