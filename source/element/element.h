@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 04:51:25 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/06 17:38:20 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/09 19:36:20 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ typedef struct s_camera
 {
 	t_vector				*position;
 	t_vector				*orientation;
-	int						fov;
+	double					fov;
 }							t_camera;
 
 typedef struct s_light
@@ -127,13 +127,13 @@ void						add_element(t_element_list *list,
 								t_element *element);
 
 int							process_element(char **data, t_element *element);
-void						process_ambient_light(char **data,
+int						process_ambient_light(char **data,
 								t_element *element);
-void						process_camera(char **data, t_element *element);
-void						process_light(char **data, t_element *element);
-void						process_sphere(char **data, t_element *element);
-void						process_plane(char **data, t_element *element);
-void						process_cylinder(char **data, t_element *element);
+int						process_light(char **data, t_element *element);
+int						process_camera(char **data, t_element *element);
+int						process_sphere(char **data, t_element *element);
+int						process_plane(char **data, t_element *element);
+int						process_cylinder(char **data, t_element *element);
 
 void						clear_vector(t_vector *vector);
 void						clear_color(t_color *color);

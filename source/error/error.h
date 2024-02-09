@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 04:49:46 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/06 06:52:00 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/09 12:11:52 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 typedef struct s_context	t_context;
 
 // Print error_msg to std_err
-void    print_error(char *error_msg);
+int    print_error(char *error_msg);
 // Print error_msg to std_err and exit the program
 void    print_exit_error(char *error_msg);
 
