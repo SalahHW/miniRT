@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 04:51:25 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/09 19:53:10 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/22 23:53:50 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,6 +117,7 @@ t_element_list				*init_element_list(void);
 
 t_vector					*new_vector(double x, double y, double z);
 t_vector					*extract_vector(char *str);
+int							is_color_compatible(char *str);
 t_color						*new_color(int red, int green, int blue);
 t_color						*extract_color(char *str);
 
