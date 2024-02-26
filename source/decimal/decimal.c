@@ -6,69 +6,54 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 05:44:29 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/08 04:01:46 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/26 18:35:22 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
 
-int is_double_compatible(char *str)
+int	is_double_compatible(char *str)
 {
-	int decimal_point;
-	int number;
+	char	**split;
+	int		integer_part;
+	int		decimal_part;
 
-	decimal_point = 0;
-	number = 0;
-	if (!*str)
+	split = ft_split(str, '.');
+	if (!split)
 		return (0);
-	if (*str == '-')
-		str++;
-	while (*str)
+	if (split_length(split) != 2 || !is_int_compatible(split[0])
+		|| !is_int_compatible(split[1]))
 	{
-		if (ft_isdigit(*str))
-			number = 1;
-		else if (*str == '.')
-		{
-			if (decimal_point)
-				return (0);
-			decimal_point = 1;
-		}
-		else
-			return (0);
-		str++;
+		p_free_splited_str(split);
+		return (0);
 	}
-	return (number);
+	integer_part = ft_atoi(split[0]);
+	decimal_part = ft_atoi(split[1]);
+	if (integer_part > 999 || integer_part < -999 || decimal_part < 0
+		|| ft_strlen(split[1]) > 2)
+	{
+		p_free_splited_str(split);
+		return (0);
+	}
+	p_free_splited_str(split);
+	return (1);
 }
 
 double	string_to_double(char *str)
 {
-    double number;
-    int sign;
-    double factor;
+	int integer_part;
+	int decimal_part;
+	char **split;
+	double result;
 
-    number = 0.0;
-
-    sign = 1;
-    factor = 1.0;
-    if (*str == '-')
-    {
-        sign *= -1;
-        str++;
-    }
-    while (ft_isdigit(*str))
-    {
-        number = number * 10 + (*str - '0');
-        str++;
-    }
-    if (*str == '.')
-    {
-        str++;
-        while (ft_isdigit(*str))
-        {
-            factor /= 10.0;
-            number = number + (*str - '0') * factor;
-            str++;
-        }
-    }
-    return (number * sign);
+	split = ft_split(str, '.');
+    if (!split)
+        return (0);
+	integer_part = ft_atoi(split[0]);
+	decimal_part = ft_atoi(split[1]);
+	result = integer_part + (decimal_part / pow(10, ft_strlen(split[1])));
+    if (*split[0] == '-')
+        result *= -1;
+	p_free_splited_str(split);
+	return (result);
 }

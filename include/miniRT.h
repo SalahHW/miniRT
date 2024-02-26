@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 04:34:16 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/04 16:40:29 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/26 16:48:22 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # include "./libft/libft.h"
 // # include "./minilibx-linux/mlx.h"
 # include <fcntl.h>
+# include <math.h>
 # include <stdio.h>
 
 #endif
