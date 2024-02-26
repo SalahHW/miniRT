@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 08:29:33 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/26 17:56:18 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/26 18:38:23 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	process_ambient_light(char **data, t_element *element)
 	t_ambient_light ambient_light;
 
 	if (split_length(data) != 3)
-		return(print_error("Invalid values for ambient light"));
+		return(print_error("Invalid syntax for ambient light"));
 	if (check_ambient_light_values(data) == FAILURE)
 		return (FAILURE);
 	ambient_light.intensity = string_to_double(data[1]);
