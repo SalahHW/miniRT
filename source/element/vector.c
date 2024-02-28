@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 06:38:35 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/27 16:48:22 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/28 04:40:15 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_vector	*new_vector(double x, double y, double z)
 {
 	t_vector	*vector;
 
-	vector = malloc(sizeof(t_vector));
+	vector = (t_vector *)malloc(sizeof(t_vector));
 	if (!vector)
 		return (NULL);
 	vector->x = x;
