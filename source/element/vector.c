@@ -6,15 +6,15 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 06:38:35 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/28 04:40:15 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/28 05:19:01 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
 
-int is_vector_compatible(char *str)
+int	is_vector_compatible(char *str)
 {
-	char **split;
+	char	**split;
 
 	split = ft_split(str, ',');
 	if (!split)
@@ -24,7 +24,8 @@ int is_vector_compatible(char *str)
 		p_free_splited_str(split);
 		return (FAILURE);
 	}
-	if (!is_double_compatible(split[0]) || !is_double_compatible(split[1]) || !is_double_compatible(split[2]))
+	if (!is_double_compatible(split[0]) || !is_double_compatible(split[1])
+		|| !is_double_compatible(split[2]))
 	{
 		p_free_splited_str(split);
 		return (FAILURE);
