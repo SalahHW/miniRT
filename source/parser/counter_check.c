@@ -6,24 +6,25 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 09:29:06 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/06 06:59:23 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/28 11:53:29 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
 
-void check_list_counter(t_context *context)
+int check_list_counter(t_context *context)
 {
     if (context->element_list->ambient_light_count < 1)
-        parser_error(context, "No ambient light found");
+        return(print_error("No ambient light found"));
     if (context->element_list->ambient_light_count > 1)
-        parser_error(context, "Too many ambient lights found");
+        return(print_error("Too many ambient light found"));
     if (context->element_list->camera_count < 1)
-        parser_error(context, "No camera found");
+        return(print_error("No camera found"));
     if (context->element_list->camera_count > 1)
-        parser_error(context, "Too many cameras found");
+        return(print_error("Too many camera found"));
     if (context->element_list->light_count < 1)
-        parser_error(context, "No light found");
+        return(print_error("No light found"));
     if (context->element_list->light_count > 1)
-        parser_error(context, "Too many lights found");
+        return(print_error("Too many light found"));
+    return (SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 06:52:40 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/06 06:53:28 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/28 11:50:42 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void parser_error(t_context *context, char *message)
 {
     clear_context(context);
-    print_exit_error(message);
+    exit(EXIT_FAILURE);
 }

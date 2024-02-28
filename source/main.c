@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 04:32:04 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/05 09:36:38 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/28 11:55:35 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@ int	main(int argc, char **argv)
 	context = init_context(argv[1]);
 	if (run_lexer(context) == FAILURE)
 		lexer_error(context);
-	run_parser(context);
+	if (run_parser(context) == FAILURE)
+		lexer_error(context);
 	clear_context(context);
 	printf("MiniRT exited successfully\n");
 	return (0);
