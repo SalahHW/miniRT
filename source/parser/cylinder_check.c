@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
+/*   cylinder_check.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/04 15:43:34 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/28 05:48:33 by sbouheni         ###   ########.fr       */
+/*   Created: 2024/02/28 10:19:10 by sbouheni          #+#    #+#             */
+/*   Updated: 2024/02/28 10:20:28 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
 
-void run_parser(t_context *context)
+int check_cylinder(t_element *element)
 {
-    check_list_counter(context);
-    if (check_element_list(context->element_list) == FAILURE)
-    {
-        clear_context(context);
-        exit(EXIT_FAILURE);
-    }
-        
+    t_cylinder cylinder;
+
+    cylinder = element->u_element.cylinder;
+    if (check_vector(cylinder.direction) == FAILURE)
+        return (print_error("Cylinder orientation is out of range [-1 - 1]"));
+    if (check_color(cylinder.color) == FAILURE)
+        return (print_error("Cylinder color is out of range [0 - 255]"));
+    return (SUCCESS);
 }

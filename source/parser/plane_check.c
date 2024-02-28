@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
+/*   plane_check.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/04 15:43:34 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/28 05:48:33 by sbouheni         ###   ########.fr       */
+/*   Created: 2024/02/28 10:10:14 by sbouheni          #+#    #+#             */
+/*   Updated: 2024/02/28 10:13:57 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
 
-void run_parser(t_context *context)
+int check_plane(t_element *element)
 {
-    check_list_counter(context);
-    if (check_element_list(context->element_list) == FAILURE)
-    {
-        clear_context(context);
-        exit(EXIT_FAILURE);
-    }
-        
+    t_plane plane;
+
+    plane = element->u_element.plane;
+    if (check_color(plane.color) == FAILURE)
+        return (print_error("Plane color is out of range [0 - 255]"));
+    if (check_vector(plane.direction) == FAILURE)
+        return (print_error("Plane orientation is out of range [-1 - 1]"));
+    return (SUCCESS);
 }

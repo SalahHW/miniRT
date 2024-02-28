@@ -6,14 +6,14 @@
 #    By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/27 04:27:06 by sbouheni          #+#    #+#              #
-#    Updated: 2024/02/28 05:09:33 by sbouheni         ###   ########.fr        #
+#    Updated: 2024/02/28 10:13:04 by sbouheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME					=	miniRT
 
 CC						=	gcc
-CFLAGS					=	-lm -g3 -Wall -Wextra -fsanitize=address #-Werror
+CFLAGS					=	-g3 -Wall -Wextra #-fsanitize=address #-Werror
 DEBUGFLAGS				=	-g3
 
 LIBFT					=	./include/libft/libft.a
@@ -44,9 +44,15 @@ SRCS					=	source/main.c									\
 							source/element/cylinder.c						\
 							source/parser/parser.c							\
 							source/parser/counter_check.c					\
+							source/parser/vector_check.c					\
 							source/parser/color_check.c						\
 							source/parser/element_check.c					\
 							source/parser/ambient_light_check.c				\
+							source/parser/camera_check.c					\
+							source/parser/light_check.c						\
+							source/parser/sphere_check.c					\
+							source/parser/plane_check.c						\
+							source/parser/cylinder_check.c					\
 							source/utils/split_length.c						\
 
 OBJS					=	$(SRCS:.c=.o)
@@ -56,7 +62,7 @@ all						:	$(NAME)
 $(NAME)					:	$(OBJS)
 							make -C ./include/libft
 							make -C ./include/minilibx-linux
-							$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -L$(MLX) -lmlx -lXext -lX11 -o $(NAME)
+							$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -L$(MLX) -lmlx -lXext -lX11 -lm -o $(NAME)
 
 debug					:	$(OBJS)
 							make -C ./include/libft

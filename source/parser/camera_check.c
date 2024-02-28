@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
+/*   camera_check.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/04 15:43:34 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/28 05:48:33 by sbouheni         ###   ########.fr       */
+/*   Created: 2024/02/28 05:49:56 by sbouheni          #+#    #+#             */
+/*   Updated: 2024/02/28 10:27:27 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
 
-void run_parser(t_context *context)
+int check_camera(t_element *element)
 {
-    check_list_counter(context);
-    if (check_element_list(context->element_list) == FAILURE)
-    {
-        clear_context(context);
-        exit(EXIT_FAILURE);
-    }
-        
+    t_camera camera;
+
+    camera = element->u_element.camera;
+    if (camera.fov < 0 || camera.fov > 180)
+        return (print_error("Camera fov is out of range [0 - 180]"));
+    if (check_vector(camera.orientation) == FAILURE)
+        return (print_error("Camera orientation is out of range [-1 - 1]"));
+    return (SUCCESS);
 }
