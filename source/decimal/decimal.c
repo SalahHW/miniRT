@@ -6,54 +6,46 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 05:44:29 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/26 18:35:22 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/28 04:24:42 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
 
-int	is_double_compatible(char *str)
+static double handle_simple_double(char *str)
 {
-	char	**split;
-	int		integer_part;
-	int		decimal_part;
+	double result;
 
-	split = ft_split(str, '.');
-	if (!split)
-		return (0);
-	if (split_length(split) != 2 || !is_int_compatible(split[0])
-		|| !is_int_compatible(split[1]))
-	{
-		p_free_splited_str(split);
-		return (0);
-	}
-	integer_part = ft_atoi(split[0]);
-	decimal_part = ft_atoi(split[1]);
-	if (integer_part > 999 || integer_part < -999 || decimal_part < 0
-		|| ft_strlen(split[1]) > 2)
-	{
-		p_free_splited_str(split);
-		return (0);
-	}
-	p_free_splited_str(split);
-	return (1);
+	result = ft_atoi(str);
+	return (result);
+}
+
+static double handle_double(char *integer_part, char *decimal_part)
+{
+	double result;
+	int integer;
+	int decimal;
+
+	integer = ft_atoi(integer_part);
+	decimal = ft_atoi(decimal_part);
+	result = integer + (decimal / pow(10, ft_strlen(decimal_part)));
+	if (*integer_part == '-')
+		result *= -1;
+	return (result);
 }
 
 double	string_to_double(char *str)
 {
-	int integer_part;
-	int decimal_part;
 	char **split;
 	double result;
 
 	split = ft_split(str, '.');
     if (!split)
         return (0);
-	integer_part = ft_atoi(split[0]);
-	decimal_part = ft_atoi(split[1]);
-	result = integer_part + (decimal_part / pow(10, ft_strlen(split[1])));
-    if (*split[0] == '-')
-        result *= -1;
+	if (split_length(split) == 1)
+		result = handle_simple_double(split[0]);
+	else
+		result = handle_double(split[0], split[1]);
 	p_free_splited_str(split);
 	return (result);
 }

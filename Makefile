@@ -6,7 +6,7 @@
 #    By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/27 04:27:06 by sbouheni          #+#    #+#              #
-#    Updated: 2024/02/26 16:50:46 by sbouheni         ###   ########.fr        #
+#    Updated: 2024/02/28 04:26:55 by sbouheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRCS					=	source/main.c									\
 							source/error/parser_error.c						\
 							source/ressource/context.c						\
 							source/decimal/decimal.c						\
+							source/decimal/decimal_compatibility.c			\
 							source/lexer/lexer.c							\
 							source/lexer/file_reading.c						\
 							source/lexer/file_reading_utils.c				\
