@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 08:31:20 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/28 05:02:01 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/28 05:18:46 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ static int check_sphere_values(char **data)
 {
     if (split_length(data) != 4)
         return (print_error("Invalid syntax for sphere"));
-    if (!is_vector_compatible(data[1]))
+    if (is_vector_compatible(data[1]) == FAILURE)
         return (print_error("Unable to get sphere position"));
     if (!is_double_compatible(data[2]))
         return (print_error("Unable to get sphere diameter"));
-    if (!is_color_compatible(data[3]))
+    if (is_color_compatible(data[3]) == FAILURE)
         return (print_error("Unable to get sphere color"));
     return (SUCCESS);
 }

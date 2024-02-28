@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 08:31:12 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/28 05:03:48 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/28 05:18:12 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ static int check_plane_values(char **data)
 {
     if (split_length(data) != 4)
         return (print_error("Invalid syntax for plane"));
-    if (!is_vector_compatible(data[1]))
+    if (is_vector_compatible(data[1]) == FAILURE)
         return (print_error("Unable to get plane position"));
-    if (!is_vector_compatible(data[2]))
+    if (is_vector_compatible(data[2]) == FAILURE)
         return (print_error("Unable to get plane direction"));
-    if (!is_color_compatible(data[3]))
+    if (is_color_compatible(data[3]) == FAILURE)
         return (print_error("Unable to get plane color"));
     return (SUCCESS);
 }

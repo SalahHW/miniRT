@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 08:30:43 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/28 05:05:12 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/28 05:20:22 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@ static int check_cylinder_values(char **data)
 {
     if (split_length(data) != 6)
         return (print_error("Invalid syntax for cylinder"));
-    if (!is_vector_compatible(data[1]))
+    if (is_vector_compatible(data[1]) == FAILURE)
         return (print_error("Unable to get cylinder position"));
-    if (!is_vector_compatible(data[2]))
+    if (is_vector_compatible(data[2]) == FAILURE)
         return (print_error("Unable to get cylinder direction"));
     if (!is_double_compatible(data[3]))
         return (print_error("Unable to get cylinder diameter"));
     if (!is_double_compatible(data[4]))
         return (print_error("Unable to get cylinder height"));
-    if (!is_color_compatible(data[5]))
+    if (is_color_compatible(data[5]) == FAILURE)
         return (print_error("Unable to get cylinder color"));
     return (SUCCESS);
 }
