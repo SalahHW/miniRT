@@ -6,11 +6,32 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 06:38:35 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/09 19:38:25 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/27 16:48:22 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
+
+int is_vector_compatible(char *str)
+{
+	char **split;
+
+	split = ft_split(str, ',');
+	if (!split)
+		return (FAILURE);
+	if (split_length(split) != 3)
+	{
+		p_free_splited_str(split);
+		return (FAILURE);
+	}
+	if (!is_double_compatible(split[0]) || !is_double_compatible(split[1]) || !is_double_compatible(split[2]))
+	{
+		p_free_splited_str(split);
+		return (FAILURE);
+	}
+	p_free_splited_str(split);
+	return (SUCCESS);
+}
 
 t_vector	*new_vector(double x, double y, double z)
 {

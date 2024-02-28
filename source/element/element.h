@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 04:51:25 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/22 23:53:50 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/27 16:47:59 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,7 @@ typedef struct s_element_list
 t_element					*init_element(void);
 t_element_list				*init_element_list(void);
 
+int							is_vector_compatible(char *str);
 t_vector					*new_vector(double x, double y, double z);
 t_vector					*extract_vector(char *str);
 int							is_color_compatible(char *str);
