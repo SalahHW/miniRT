@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 03:19:18 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/06 17:52:31 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/02/29 12:36:29 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ t_context    *init_context(char *rt_file_path)
         free(context);
         print_exit_error("Unable to allocate memory for element list");
     }
+    context->mlx_session = NULL;
     return (context);
 }
 

@@ -6,7 +6,7 @@
 #    By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/27 04:27:06 by sbouheni          #+#    #+#              #
-#    Updated: 2024/02/28 10:13:04 by sbouheni         ###   ########.fr        #
+#    Updated: 2024/02/29 15:13:21 by sbouheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRCS					=	source/main.c									\
 							source/error/lexer_error.c						\
 							source/error/parser_error.c						\
 							source/ressource/context.c						\
+							source/ressource/quit_program.c 				\
 							source/decimal/decimal.c						\
 							source/decimal/decimal_compatibility.c			\
 							source/lexer/lexer.c							\
@@ -53,6 +54,10 @@ SRCS					=	source/main.c									\
 							source/parser/sphere_check.c					\
 							source/parser/plane_check.c						\
 							source/parser/cylinder_check.c					\
+							source/render/render.c							\
+							source/render/init.c							\
+							source/render/window.c							\
+							source/render/keybind.c							\
 							source/utils/split_length.c						\
 
 OBJS					=	$(SRCS:.c=.o)
