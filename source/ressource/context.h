@@ -21,6 +21,9 @@ typedef struct s_context
 {
 	t_rt_file		*rt_file;
 	t_element_list	*element_list;
+	t_ambient_light *ambient_light;
+	t_camera 		*camera;
+	t_light			*light;
 	t_mlx_session	*mlx_session;
 }					t_context;
 
