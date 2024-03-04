@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   context.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 03:19:18 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/29 12:36:29 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/04 14:02:59 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ t_context    *init_context(char *rt_file_path)
         print_exit_error("Unable to allocate memory for element list");
     }
     context->mlx_session = NULL;
+    context->ambient_light = NULL;
+    context->camera = NULL;
+    context->light = NULL;
     return (context);
 }
 
