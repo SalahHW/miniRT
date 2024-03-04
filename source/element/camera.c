@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   camera.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 08:30:32 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/27 17:04:26 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/04 13:17:09 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,20 @@ int	process_camera(char **data, t_element *element)
     element->u_element.camera = camera;
     element->initialized = 1;
     return (SUCCESS);
+}
+
+t_camera *get_camera(t_element_list *list)
+{
+    t_element *current_element;
+
+    current_element = list->head;
+    while (current_element)
+    {
+        if (current_element->identifier == camera)
+            return (&current_element->u_element.camera);
+        current_element = current_element->next;
+    }
+    return (NULL);
 }
 
 void clear_camera(t_element *element)

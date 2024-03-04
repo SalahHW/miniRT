@@ -36,6 +36,20 @@ int	process_ambient_light(char **data, t_element *element)
 	return (SUCCESS);
 }
 
+t_ambient_light *get_ambient_light(t_element_list *list)
+{
+	t_element *current_element;
+
+	current_element = list->head;
+	while (current_element)
+	{
+		if (current_element->identifier == ambient_light)
+			return (&current_element->u_element.ambient_light);
+		current_element = current_element->next;
+	}
+	return (NULL);
+}
+
 void clear_ambient_light(t_element *element)
 {
 	if (!element->initialized)

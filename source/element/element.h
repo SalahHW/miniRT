@@ -137,6 +137,10 @@ int							process_sphere(char **data, t_element *element);
 int							process_plane(char **data, t_element *element);
 int							process_cylinder(char **data, t_element *element);
 
+t_ambient_light				*get_ambient_light(t_element_list *element_list);
+t_camera					*get_camera(t_element_list *element_list);
+t_light						*get_light(t_element_list *element_list);
+
 void						clear_vector(t_vector *vector);
 void						clear_color(t_color *color);
 void						clear_element(t_element *element);

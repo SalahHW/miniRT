@@ -39,6 +39,20 @@ int	process_light(char **data, t_element *element)
     return (SUCCESS);
 }
 
+t_light *get_light(t_element_list *list)
+{
+    t_element *current_element;
+
+    current_element = list->head;
+    while (current_element)
+    {
+        if (current_element->identifier == light)
+            return (&current_element->u_element.light);
+        current_element = current_element->next;
+    }
+    return (NULL);
+}
+
 void clear_light(t_element *element)
 {
     if (!element->initialized)
