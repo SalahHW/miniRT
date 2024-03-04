@@ -18,5 +18,8 @@ int run_parser(t_context *context)
         return (FAILURE);
     if (check_element_list(context->element_list) == FAILURE)
         return (FAILURE);
+    context->ambient_light = get_ambient_light(context->element_list);
+    context->camera = get_camera(context->element_list);
+    context->light = get_light(context->light);
     return (SUCCESS);
 }
