@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   element.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 04:51:25 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/27 16:47:59 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/06 15:41:49 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,7 @@ t_vector					*extract_vector(char *str);
 int							is_color_compatible(char *str);
 t_color						*new_color(int red, int green, int blue);
 t_color						*extract_color(char *str);
+int							color_to_int(t_color color);
 
 void						clear_element_list(t_element_list *list);
 int							extract_element(t_context *context);
