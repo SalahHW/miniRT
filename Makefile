@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+         #
+#    By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/27 04:27:06 by sbouheni          #+#    #+#              #
-#    Updated: 2024/02/29 15:13:21 by sbouheni         ###   ########.fr        #
+#    Updated: 2024/03/11 16:58:34 by sbouheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,6 +58,23 @@ SRCS					=	source/main.c									\
 							source/render/init.c							\
 							source/render/window.c							\
 							source/render/keybind.c							\
+							source/intersection/intersection.c				\
+							source/intersection/intersection_plan.c			\
+							source/intersection/init_vec.c					\
+							source/intersection/init_vec_utils.c			\
+							source/intersection/intersection_sphere.c		\
+							source/intersection/intersection_cyl.c			\
+							source/intersection/intersection_cyl_utils.c	\
+							source/normal_objects/normal_cyl.c				\
+							source/normal_objects/normal_plan.c				\
+							source/normal_objects/normal_sphere.c			\
+							source/light/light.c							\
+							source/light/illuminated.c						\
+							source/light/inter_cyl_bis.c					\
+							source/light/inter_plan_bis.c					\
+							source/light/inter_sphere_bis.c					\
+							source/equation/tools_math.c					\
+							source/equation/tools_math2.c					\
 							source/utils/split_length.c						\
 
 OBJS					=	$(SRCS:.c=.o)
