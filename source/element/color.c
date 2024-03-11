@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   color.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 06:43:55 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/23 10:43:02 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/06 15:41:11 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,14 @@ t_color *extract_color(char *str)
     color = new_color(ft_atoi(split[0]), ft_atoi(split[1]), ft_atoi(split[2]));
     p_free_splited_str(split);
     return (color);
+}
+
+int color_to_int(t_color color)
+{
+    int int_color;
+
+    int_color = ((color.red << 16) + (color.green << 8) + color.blue);
+    return (int_color);
 }
 
 void clear_color(t_color *color)
