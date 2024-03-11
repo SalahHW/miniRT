@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 04:32:04 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/29 10:48:43 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/11 13:28:35 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,12 @@ int	main(int argc, char **argv)
 		lexer_error(context);
 	if (run_parser(context) == FAILURE)
 		lexer_error(context);
-	if (run_render(context) == FAILURE)
+	if (init_rendering(context) == FAILURE)
 		lexer_error(context);
+	run_minirt(context);
+	mlx_hook(context->mlx_session->win, 17, 1L << 3, close_window, context);
+    mlx_key_hook(context->mlx_session->win, deal_key, context);
+    mlx_loop(context->mlx_session->mlx);
 	clear_context(context);
 	printf("MiniRT exited successfully\n");
 	return (0);

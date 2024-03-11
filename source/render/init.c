@@ -9,5 +9,10 @@ int init_mlx_session(t_context *context)
         return (print_error("Failed to allocate memory for mlx"));
     context->mlx_session = mlx_session;
     context->mlx_session->mlx = mlx_init();
+    if (!context->mlx_session->mlx)
+    {
+        free(context->mlx_session);
+        return (print_error("Failed to initialize mlx"));
+    }
     return (SUCCESS);
 }
