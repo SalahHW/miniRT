@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 16:47:38 by flmartin          #+#    #+#             */
-/*   Updated: 2024/03/11 16:56:01 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/12 13:00:12 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ double	get_c_cyl(t_cylinder cyl, t_vector ca)
 
 	c = norm_vec(ca) * norm_vec(ca);
 	c -= prod_scal(ca, *cyl.direction) * prod_scal(ca, *cyl.direction);
-	c -= cyl.diameter * cyl.diameter;
+	c -= (cyl.diameter / 2) * (cyl.diameter / 2);
 	return (c);
 }

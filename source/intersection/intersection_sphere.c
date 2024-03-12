@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:50:32 by flmartin          #+#    #+#             */
-/*   Updated: 2024/03/11 15:48:47 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/12 12:57:51 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	intersection_sphere(t_vector cam, t_dir_pixel *dir, t_sphere sphere)
 	c = prod_scal(cam, cam);
 	c -= 2 * prod_scal(cam, *sphere.position);
 	c += prod_scal(*sphere.position, *sphere.position);
-	c -= sphere.diameter * sphere.diameter;
+	c -= (sphere.diameter / 2) * (sphere.diameter / 2);
 	dist = sol_quadratic_equation(a, b, c);
 	if (dist <= dir->dist && dist > 0)
 	{

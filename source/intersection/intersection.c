@@ -6,13 +6,13 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 15:37:06 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/03/11 15:02:03 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/12 12:52:36 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
 
-void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
+void	my_mlx_pixel_put(t_img *data, int x, int y, int color)
 {
 	char	*dst;
 
@@ -29,10 +29,20 @@ void intersection(t_vector camera_position, t_dir_pixel *pixel, t_element_list *
     {
 		if (current_element->identifier == plane)
             intersection_plan(camera_position, pixel, current_element->u_element.plane);
-        else if (current_element->identifier == sphere)
+		current_element = current_element->next;
+    }
+	current_element = list->head;
+	while (current_element)
+    {
+		if (current_element->identifier == sphere)
             intersection_sphere(camera_position, pixel, current_element->u_element.sphere);
-        else if (current_element->identifier == cylinder)
-            intersection_cylinder(camera_position, pixel, current_element->u_element.cylinder);
+		current_element = current_element->next;
+    }
+	current_element = list->head;
+	while (current_element)
+    {
+		if (current_element->identifier == cylinder)
+			intersection_cylinder(camera_position, pixel, current_element->u_element.cylinder);
 		current_element = current_element->next;
     }
 }
@@ -62,7 +72,7 @@ void	run_minirt(t_context *context)
 			pixel.diffuse_light = search_diffuse_light(pixel, context);
 			color2 = pixel.diffuse_light;
 			color = sum_light(color, color2);
-			my_mlx_pixel_put(context->mlx_session->img->img, i, j, color);
+			my_mlx_pixel_put(context->mlx_session->image, i, j, color);
 		}
 	}
 }
