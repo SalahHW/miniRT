@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:56:42 by flmartin          #+#    #+#             */
-/*   Updated: 2024/03/11 17:10:59 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/12 13:02:52 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int	intersection_cyl2_bis(t_vector pos, t_vector dir, t_cylinder *cyl, double di
 	if (dist <= distance && dist > 0.000001)
 	{
 		intersection = sum_vec(pos, prod_nb_vec(dist, dir));
-		if (norm_vec(diff_vec(intersection, h)) <= cyl->diameter)
+		if (norm_vec(diff_vec(intersection, h)) <= (cyl->diameter / 2))
 			return (1);
 	}
 	return (0);
@@ -81,7 +81,7 @@ int	intersection_cyl3_bis(t_vector pos, t_vector dir, t_cylinder *cyl, double di
 	if (dist <= distance && dist > 0.000001)
 	{
 		intersection = sum_vec(pos, prod_nb_vec(dist, dir));
-		if (norm_vec(diff_vec(intersection, h)) <= cyl->diameter)
+		if (norm_vec(diff_vec(intersection, h)) <= (cyl->diameter / 2))
 			return (1);
 	}
 	return (0);
