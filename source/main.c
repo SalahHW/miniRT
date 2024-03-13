@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 04:32:04 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/03/12 11:13:08 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/13 11:00:45 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,13 @@ int	main(int argc, char **argv)
 		lexer_error(context);
 	if (run_parser(context) == FAILURE)
 		lexer_error(context);
-	if (init_rendering(context) == FAILURE)
+	if (run_rendering(context) == FAILURE)
 		lexer_error(context);
-	run_minirt(context);
-	mlx_put_image_to_window(context->mlx_session->mlx, context->mlx_session->win,
-		context->mlx_session->image->mlx_img, 0, 0);
-	mlx_hook(context->mlx_session->win, 17, 1L << 3, close_window, context);
-    mlx_key_hook(context->mlx_session->win, deal_key, context);
-    mlx_loop(context->mlx_session->mlx);
+		// rendering_error(context);
+	if (run_window(context) == FAILURE)
+			lexer_error(context);
+		// window_error(context);
+	
 	clear_context(context);
 	printf("MiniRT exited successfully\n");
 	return (0);
