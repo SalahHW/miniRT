@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 04:51:25 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/03/06 15:41:49 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/13 17:03:17 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ t_color						*extract_color(char *str);
 int							color_to_int(t_color color);
 
 void						clear_element_list(t_element_list *list);
-int							extract_element(t_context *context);
+int							extract_element(t_context *context, char **data);
 t_element_identifier		get_element_type(char *str);
 void						add_element(t_element_list *list,
 								t_element *element);
