@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 15:38:35 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/03/11 16:51:54 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/13 10:56:37 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ typedef struct s_base
 	t_vector	w;
 }			t_base;
 
-void						run_minirt(t_context *context);
 void						intersection(t_vector camera_position,
 								t_dir_pixel *pixel, t_element_list *list);
 void						intersection_plan(t_vector camera_posititon,
@@ -45,12 +44,6 @@ void						intersection_sphere(t_vector camera_posititon,
 								t_dir_pixel *pixel, t_sphere sphere);
 void						intersection_cylinder(t_vector camera_posititon,
 								t_dir_pixel *pixel, t_cylinder cylinder);
-// void						intersection_cyl1(t_vector camera_posititon,
-// 								t_dir_pixel *pixel, t_cylinder cylinder);
-// void						intersection_cyl2(t_vector camera_posititon,
-// 								t_dir_pixel *pixel, t_cylinder cylinder);
-// void						intersection_cyl3(t_vector camera_posititon,
-// 								t_dir_pixel *pixel, t_cylinder cylinder);
 int		not_in_range(t_vector intersection, t_cylinder cyl);
 double	get_a_cyl(t_vector dir, t_cylinder cyl);
 double	get_b_cyl(t_vector dir, t_cylinder cyl, t_vector ca);
