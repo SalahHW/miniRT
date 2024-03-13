@@ -3,35 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   element_extraction.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/27 06:39:22 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/28 07:56:13 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/13 17:09:30 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
 
-int    extract_element(t_context *context)
+int    extract_element(t_context *context, char **data)
 {
     t_element   *element;
-    char        **data;
 
     element = init_element();
     if (!element)
         return (FAILURE);
-    data = ft_split_white_space(context->rt_file->current_line);
-    if (!data)
-    {
-        free(element);
-        return (FAILURE);
-    }
     element->identifier = get_element_type(data[0]);
     if (element->identifier == unknown)
     {
         free(element);
         p_free_splited_str(data);
-        return (FAILURE);
+        return (print_error("Unknown element type in file"));
     }
     if (process_element(data, element) == FAILURE)
     {
@@ -39,7 +32,6 @@ int    extract_element(t_context *context)
         p_free_splited_str(data);
         return (FAILURE);
     }
-    p_free_splited_str(data);
     add_element(context->element_list, element);
     return (SUCCESS);
 }
