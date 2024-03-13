@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   file_reading.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 03:25:58 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/01 04:47:53 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/13 21:07:43 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,24 +34,36 @@ t_rt_file	*open_rt_file(char *file_path)
 
 int	extract_rt_file_data(t_context *context)
 {
-	context->rt_file->current_line = get_next_line(context->rt_file->fd);
-	while (context->rt_file->current_line)
+	char	*current_line;
+	char	**data;
+
+	current_line = get_next_line(context->rt_file->fd);
+	while (current_line)
 	{
-		if (!is_empty_line(context->rt_file->current_line))
+		if (!is_empty_line(current_line))
 		{
-			if (extract_element(context) == FAILURE)
+			data = ft_split_white_space(current_line);
+			if (!data)
+			{
+				free(current_line); // Libérer la ligne actuelle en cas d'erreur
+				return (print_error("Unable to split data from file"));
+			}
+			if (extract_element(context, data) == FAILURE)
+			{
+				free(current_line);
+				p_free_splited_str(data); // Libération des données splitées
 				return (FAILURE);
+			}
+			p_free_splited_str(data); // Libération des données splitées
 		}
-		free(context->rt_file->current_line);
-		context->rt_file->current_line = get_next_line(context->rt_file->fd);
+		free(current_line); // Libération de la ligne actuelle à chaque fin de boucle
+		current_line = get_next_line(context->rt_file->fd);
 	}
 	return (SUCCESS);
 }
 
 void	clear_file(t_rt_file *file)
 {
-	if (file->current_line)
-		free(file->current_line);
 	close(file->fd);
 	free(file);
 }
