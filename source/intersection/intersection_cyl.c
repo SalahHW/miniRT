@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:50:20 by flmartin          #+#    #+#             */
-/*   Updated: 2024/03/12 13:43:29 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/12 15:44:04 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ static void	intersection_cyl(t_vector cam, t_dir_pixel *dir, t_cylinder cyl)
 	b = get_b_cyl(dir->dir_pixel, cyl, diff_vec(cam, *cyl.position));
 	c = get_c_cyl(cyl, diff_vec(cam, *cyl.position));
 	dist = sol_quadratic_equation(a, b, c);
-	printf("dist = %f\n", dist);
 	if ((dir->dist == 0 || dist <= dir->dist) && dist > 0)
 	{
 		if (not_in_range(sum_vec(cam, prod_nb_vec(dist, dir->dir_pixel)), cyl))
