@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   lexer.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
+/*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 01:04:46 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/01/28 07:41:51 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/13 16:56:49 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ typedef struct s_rt_file
 {
 	char						*file_path;
 	int							fd;
-	char						*current_line;
 }								t_rt_file;
 
 // Execute lexer process
