@@ -6,15 +6,15 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 04:34:16 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/03/12 12:31:47 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/12 15:52:55 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINIRT_H
 # define MINIRT_H
 
-# define WINDOW_HEIGHT 1000
 # define WINDOW_WIDTH 2000
+# define WINDOW_HEIGHT 1000
 # define SUCCESS 0
 # define FAILURE -1
 
