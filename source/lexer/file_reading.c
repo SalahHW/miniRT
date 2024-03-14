@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 03:25:58 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/03/14 07:43:33 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/14 15:06:40 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,21 +51,22 @@ static int extract_line_data(t_context *context, char *current_line)
 int	extract_rt_file_data(t_context *context)
 {
 	char	*current_line;
+	int error_occured;
 
+	error_occured = 0;
 	current_line = get_next_line(context->rt_file->fd);
 	while (current_line)
 	{
-		if (!is_empty_line(current_line))
+		if (!is_empty_line(current_line) && !error_occured)
 		{
 			if (extract_line_data(context, current_line) == FAILURE)
-			{
-				free(current_line);
-				return (FAILURE);
-			}
+				error_occured = 1;
 		}
 		free(current_line);
 		current_line = get_next_line(context->rt_file->fd);
 	}
+	if (error_occured)
+		return (FAILURE);
 	return (SUCCESS);
 }
 
