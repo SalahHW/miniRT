@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 15:10:24 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/03/13 10:58:39 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/15 01:51:40 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ static void	run_minirt(t_context *context)
 	int			color;
 	int			color2;
 	
-	color = 0;
 	j = -1;
 	create_base_cam(context->base_cam, context);
 	init_vec(context->base_cam, context->camera, context->dist_cam, context);
