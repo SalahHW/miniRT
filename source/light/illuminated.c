@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:49:45 by flmartin          #+#    #+#             */
-/*   Updated: 2024/03/15 01:36:10 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/16 06:06:54 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static int not_illum_cyl(t_vector pos, t_vector dir, t_context *minirt, double d
 	{
 		if (current_element->identifier == cylinder)
 		{
-			if (intersection_cyl_bis(pos, dir, &current_element->u_element.cylinder, distance))
+			if (intersection_cyls_bis(pos, dir, &current_element->u_element.cylinder, distance))
 				return (1);
 		}
 		current_element = current_element->next;
