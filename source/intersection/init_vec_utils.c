@@ -17,7 +17,7 @@ void	initialize_and_update_pixel(t_dir_pixel *pixel)
 	pixel->col_obj = 0;
 	pixel->color_ambient = 0;
 	pixel->diffuse_light = 0;
-	pixel->dist = 0;
+	pixel->dist = 9999999999999;
 	pixel->did_it_touch = 0;
 }
 
