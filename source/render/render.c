@@ -6,13 +6,13 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 15:10:24 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/03/15 01:51:40 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/19 17:23:08 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
 
-static int init_data_img(t_context *context)
+static int create_image(t_context *context)
 {
     void *image;
     char *addr;
@@ -37,7 +37,7 @@ static int init_data_img(t_context *context)
     return (SUCCESS);
 }
 
-void	my_mlx_pixel_put(t_img *data, int x, int y, int color)
+void	set_pixel_color(t_img *data, int x, int y, int color)
 {
 	char	*dst;
 
@@ -45,7 +45,7 @@ void	my_mlx_pixel_put(t_img *data, int x, int y, int color)
 	*(unsigned int *)dst = color;
 }
 
-static void	run_minirt(t_context *context)
+static void	render_image(t_context *context)
 {
 	t_dir_pixel	pixel;
 	int			i;
@@ -54,8 +54,6 @@ static void	run_minirt(t_context *context)
 	int			color2;
 	
 	j = -1;
-	create_base_cam(context->base_cam, context);
-	init_vec(context->base_cam, context->camera, context->dist_cam, context);
 	while (++j < WINDOW_HEIGHT)
 	{
 		i = -1;
@@ -68,7 +66,7 @@ static void	run_minirt(t_context *context)
 			pixel.diffuse_light = search_diffuse_light(pixel, context);
 			color2 = pixel.diffuse_light;
 			color = sum_light(color, color2);
-			my_mlx_pixel_put(context->mlx_session->image, i, j, color);
+			set_pixel_color(context->mlx_session->image, i, j, color);
 		}
 	}
 }
@@ -78,11 +76,13 @@ int run_rendering(t_context *context)
     printf("Initializing rendering\n");
     if (init_mlx_session(context) == FAILURE)
         return (FAILURE);
-    if (init_data_img(context) == FAILURE)
+    if (create_image(context) == FAILURE)
         return (FAILURE);
     printf("Rendering initialized successfully\n");
     printf("Generating image\n");
-    run_minirt(context);
-    printf("Image generated successfully\n");
+	init_camera_basis(context->base_cam, context);
+	init_projection(context->base_cam, context->camera, context->dist_cam, context);
+    render_image(context);
+    printf("Image generation finished\n");
     return (SUCCESS);
 }

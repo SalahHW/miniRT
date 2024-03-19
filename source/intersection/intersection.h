@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 15:38:35 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/03/13 10:56:37 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/19 17:23:00 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ double	get_a_cyl(t_vector dir, t_cylinder cyl);
 double	get_b_cyl(t_vector dir, t_cylinder cyl, t_vector ca);
 double	get_c_cyl(t_cylinder cyl, t_vector ca);
 
-void	create_base_cam(t_base *base_cam, t_context *minirt);
-int		init_vec(t_base *base_cam, t_camera *cam,
+
+int		init_projection(t_base *base_cam, t_camera *cam,
 			double dist_cam, t_context *minirt);
 void	initialize_and_update_pixel(t_dir_pixel *pixel);
 int		allocate_dir_pixel_array(t_context *minirt);

@@ -12,11 +12,7 @@
 
 #include "../../include/miniRT.h"
 
-// on construit le repere centre autour de la camera, avec la distance
-// qui separe l'oeil de la camera.
-// on preferera l'utilisation du produit vectoriel pour la creation des vecteurs
-// definissant la camera plutot qu'une rotation de la base (O, i, j, k).
-void	create_base_cam(t_base *base_cam, t_context *minirt)
+void	init_camera_basis(t_base *base_cam, t_context *minirt)
 {
 	t_vector	j;
 
@@ -33,7 +29,6 @@ void	create_base_cam(t_base *base_cam, t_context *minirt)
 	return ;
 }
 
-// creation de tous les vecteurs directeurs unitaires des rayons envoyes
 int	use_dir_origin(t_vector dir_origin, double step_x, double step_y,
 	t_context *minirt)
 {
@@ -63,13 +58,8 @@ int	use_dir_origin(t_vector dir_origin, double step_x, double step_y,
 	}
 	return (0);
 }
-//minirt->dir_pixel[y][x].intersection = NULL;
 
-// Creation du vecteur "dir_origin" qui represente le vecteur partant de
-// la camera jusqu'au pixel tout en haut a gauche de l'ecran.
-// les calculs impliquent la dimension de la fenetre,
-// on fera un rapport de RATIO_SCREEN = HEIGHT/WIDTH pour la hauteur de l'ecran
-int	init_vec(t_base *base_cam, t_camera *cam, double dist_cam,
+int	init_projection(t_base *base_cam, t_camera *cam, double dist_cam,
 	t_context *minirt)
 {
 	t_vector	dir_origin;
