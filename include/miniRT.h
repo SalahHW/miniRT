@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 04:34:16 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/03/15 01:16:33 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/19 17:15:57 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # define WINDOW_WIDTH 1920
 # define WINDOW_HEIGHT 1080
+# define M_PI 3.14159265358979323846
 # define SUCCESS 0
 # define FAILURE -1
 
