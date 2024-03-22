@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 15:10:27 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/03/13 14:40:51 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/20 18:49:29 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,7 @@ int close_window(t_context *context)
     mlx_destroy_image(context->mlx_session->mlx, context->mlx_session->image->mlx_img);
     mlx_destroy_window(context->mlx_session->mlx, context->mlx_session->win);
     mlx_destroy_display(context->mlx_session->mlx);
-    if (context->mlx_session->mlx)
-        free(context->mlx_session->mlx);
-    if (context->mlx_session)
-        free(context->mlx_session);
+    clear_mlx_session(context);
     quit_program(context);
+    return (SUCCESS);
 }
