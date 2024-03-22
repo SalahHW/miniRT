@@ -6,14 +6,14 @@
 #    By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/27 04:27:06 by sbouheni          #+#    #+#              #
-#    Updated: 2024/03/20 18:45:33 by sbouheni         ###   ########.fr        #
+#    Updated: 2024/03/22 19:08:02 by sbouheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME					=	miniRT
 
 CC						=	gcc
-CFLAGS					=	-g3 -Wall -Wextra #-fsanitize=address #-Werror
+CFLAGS					=	-g3 -Wall -Wextra -fsanitize=address -Werror
 DEBUGFLAGS				=	-g3
 
 LIBFT					=	./include/libft/libft.a
@@ -22,7 +22,6 @@ MLX						=	./include/minilibx-linux/
 SRCS					=	source/main.c									\
 							source/error/error.c							\
 							source/error/lexer_error.c						\
-							source/error/parser_error.c						\
 							source/ressource/context.c						\
 							source/ressource/quit_program.c 				\
 							source/decimal/decimal.c						\
