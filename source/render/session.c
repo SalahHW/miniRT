@@ -16,3 +16,12 @@ int init_mlx_session(t_context *context)
     }
     return (SUCCESS);
 }
+
+int clear_mlx_session(t_context *context)
+{
+    if (context->mlx_session->mlx)
+        free(context->mlx_session->mlx);
+    if (context->mlx_session)
+        free(context->mlx_session);
+    return (SUCCESS);
+}
