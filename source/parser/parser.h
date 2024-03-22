@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 05:15:20 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/03/22 18:12:20 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/22 19:12:51 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int							check_element_list(t_element_list *element_list);
 int							check_vector_range(t_vector vector);
 int							check_vector_normal(t_vector vector);
 int							check_ambient_light(t_element *element);
+int							check_size(double size);
 int							check_camera(t_element *element);
 int							check_light(t_element *element);
 int							check_sphere(t_element *element);

@@ -6,7 +6,7 @@
 #    By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/27 04:27:06 by sbouheni          #+#    #+#              #
-#    Updated: 2024/03/22 19:08:02 by sbouheni         ###   ########.fr        #
+#    Updated: 2024/03/22 19:15:09 by sbouheni         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,6 +45,7 @@ SRCS					=	source/main.c									\
 							source/parser/parser.c							\
 							source/parser/counter_check.c					\
 							source/parser/vector_check.c					\
+							source/parser/size_check.c						\
 							source/parser/color_check.c						\
 							source/parser/element_check.c					\
 							source/parser/ambient_light_check.c				\

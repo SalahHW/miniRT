@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 10:19:10 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/03/22 18:13:30 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/22 19:11:26 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,7 @@ int	check_cylinder(t_element *element)
 		return (print_error("Cylinder orientation is out of range [-1 - 1]"));
 	if (check_vector_normal(*cylinder.direction) == FAILURE)
 		return (print_error("Cylinder orientation vector is not normalized"));
+	if (check_size(cylinder.diameter) == FAILURE)
+		return (print_error("Cylinder diameter is out of range [0 - 999]"));
 	return (SUCCESS);
 }
