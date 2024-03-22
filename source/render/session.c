@@ -21,6 +21,8 @@ int clear_mlx_session(t_context *context)
 {
     if (context->mlx_session->mlx)
         free(context->mlx_session->mlx);
+    if (context->mlx_session->image)
+        free(context->mlx_session->image);
     if (context->mlx_session)
         free(context->mlx_session);
     return (SUCCESS);

@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 15:10:24 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/03/19 17:23:08 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/22 18:05:28 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ static void	render_image(t_context *context)
 	int			i;
 	int			j;
 	int			color;
-	int			color2;
 	
 	j = -1;
 	while (++j < WINDOW_HEIGHT)
@@ -64,11 +63,13 @@ static void	render_image(t_context *context)
 			pixel.color_ambient = calculate_ambient_light_color(pixel.col_obj, color_to_int(*context->ambient_light->color), context->ambient_light->intensity);
 			color = pixel.color_ambient;
 			pixel.diffuse_light = search_diffuse_light(pixel, context);
-			color2 = pixel.diffuse_light;
-			color = sum_light(color, color2);
+			color = sum_light(color, pixel.diffuse_light);
 			set_pixel_color(context->mlx_session->image, i, j, color);
+            free(pixel.intersection);
 		}
+        free(context->dir_pixel[j]);
 	}
+    free(context->dir_pixel);
 }
 
 int run_rendering(t_context *context)
