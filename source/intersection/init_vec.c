@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_vec.c                                   :+:      :+:    :+:   */
+/*   init_vec.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flmartin <flmartin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:51:24 by flmartin          #+#    #+#             */
-/*   Updated: 2023/12/15 16:14:02 by flmartin         ###   ########.fr       */
+/*   Updated: 2024/03/20 17:11:38 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ void	init_camera_basis(t_base *base_cam, t_context *minirt)
 }
 
 int	use_dir_origin(t_vector dir_origin, double step_x, double step_y,
-	t_context *minirt)
+		t_context *minirt)
 {
 	t_vector	dir;
-	int		x;
-	int		y;
+	int			x;
+	int			y;
 
 	y = -1;
 	if (allocate_dir_pixel_array(minirt) == -1)
@@ -60,13 +60,13 @@ int	use_dir_origin(t_vector dir_origin, double step_x, double step_y,
 }
 
 int	init_projection(t_base *base_cam, t_camera *cam, double dist_cam,
-	t_context *minirt)
+		t_context *minirt)
 {
 	t_vector	dir_origin;
-	double	step_x;
-	double	step_y;
-	double	l;
-	double	h;
+	double		step_x;
+	double		step_y;
+	double		l;
+	double		h;
 
 	l = 2 * dist_cam * tan((cam->fov / 2) * (M_PI / 180));
 	h = ((double)WINDOW_HEIGHT / (double)WINDOW_WIDTH) * l;
