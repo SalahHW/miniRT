@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 03:25:58 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/03/14 15:06:40 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/22 18:17:24 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ t_rt_file	*open_rt_file(char *file_path)
 	return (file);
 }
 
-static int extract_line_data(t_context *context, char *current_line)
+static int	extract_line_data(t_context *context, char *current_line)
 {
-	char **data;
-	
+	char	**data;
+
 	data = ft_split_white_space(current_line);
 	if (!data)
 		return (print_error("Unable to split data from file"));
@@ -51,7 +51,7 @@ static int extract_line_data(t_context *context, char *current_line)
 int	extract_rt_file_data(t_context *context)
 {
 	char	*current_line;
-	int error_occured;
+	int		error_occured;
 
 	error_occured = 0;
 	current_line = get_next_line(context->rt_file->fd);

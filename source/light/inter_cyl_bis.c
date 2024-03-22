@@ -6,13 +6,14 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:56:42 by flmartin          #+#    #+#             */
-/*   Updated: 2024/03/12 13:02:52 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/22 18:17:05 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
 
-int	intersection_cyls_bis(t_vector pos, t_vector dir, t_cylinder *cyl, double distance)
+int	intersection_cyls_bis(t_vector pos, t_vector dir, t_cylinder *cyl,
+		double distance)
 {
 	if (intersection_cyl_bis(pos, dir, cyl, distance))
 		return (1);
@@ -23,7 +24,8 @@ int	intersection_cyls_bis(t_vector pos, t_vector dir, t_cylinder *cyl, double di
 	return (0);
 }
 
-int	intersection_cyl_bis(t_vector pos, t_vector dir, t_cylinder *cyl, double distance)
+int	intersection_cyl_bis(t_vector pos, t_vector dir, t_cylinder *cyl,
+		double distance)
 {
 	double	a;
 	double	b;
@@ -45,11 +47,12 @@ int	intersection_cyl_bis(t_vector pos, t_vector dir, t_cylinder *cyl, double dis
 	return (0);
 }
 
-int	intersection_cyl2_bis(t_vector pos, t_vector dir, t_cylinder *cyl, double distance)
+int	intersection_cyl2_bis(t_vector pos, t_vector dir, t_cylinder *cyl,
+		double distance)
 {
 	t_vector	h;
 	t_vector	intersection;
-	double	dist;
+	double		dist;
 
 	if (prod_scal(*cyl->direction, dir) == 0)
 		return (0);
@@ -66,11 +69,12 @@ int	intersection_cyl2_bis(t_vector pos, t_vector dir, t_cylinder *cyl, double di
 	return (0);
 }
 
-int	intersection_cyl3_bis(t_vector pos, t_vector dir, t_cylinder *cyl, double distance)
+int	intersection_cyl3_bis(t_vector pos, t_vector dir, t_cylinder *cyl,
+		double distance)
 {
 	t_vector	h;
 	t_vector	intersection;
-	double	dist;
+	double		dist;
 
 	if (prod_scal(*cyl->direction, dir) == 0)
 		return (0);

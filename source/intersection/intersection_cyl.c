@@ -33,7 +33,8 @@ static void	intersection_cyl(t_vector cam, t_dir_pixel *dir, t_cylinder cyl)
 		dir->dist = dist;
 		dir->col_obj = color_to_int(*cyl.color);
 		*dir->intersection = sum_vec(cam, prod_nb_vec(dist, dir->dir_pixel));
-		dir->n = get_normal_cyl(*dir->intersection, *cyl.direction, *cyl.position);
+		dir->n = get_normal_cyl(*dir->intersection, *cyl.direction,
+				*cyl.position);
 	}
 	return ;
 }
@@ -42,7 +43,7 @@ static void	intersection_cyl2(t_vector cam, t_dir_pixel *dir, t_cylinder cyl)
 {
 	t_vector	h;
 	t_vector	intersection;
-	double	dist;
+	double		dist;
 
 	if (prod_scal(*cyl.direction, dir->dir_pixel) == 0)
 		return ;
@@ -53,14 +54,15 @@ static void	intersection_cyl2(t_vector cam, t_dir_pixel *dir, t_cylinder cyl)
 	if (dist <= 0)
 		return ;
 	intersection = sum_vec(cam, prod_nb_vec(dist, dir->dir_pixel));
-	if (dist <= dir->dist
-		&& (norm_vec(diff_vec(intersection, h)) <= (cyl.diameter / 2)))
+	if (dist <= dir->dist && (norm_vec(diff_vec(intersection,
+					h)) <= (cyl.diameter / 2)))
 	{
 		dir->did_it_touch = 1;
 		dir->dist = dist;
 		dir->col_obj = color_to_int(*cyl.color);
 		*dir->intersection = intersection;
-		dir->n = get_normal_plan(*cyl.direction, diff_vec(*dir->intersection, cam));
+		dir->n = get_normal_plan(*cyl.direction, diff_vec(*dir->intersection,
+					cam));
 	}
 	return ;
 }
@@ -69,7 +71,7 @@ static void	intersection_cyl3(t_vector cam, t_dir_pixel *dir, t_cylinder cyl)
 {
 	t_vector	h;
 	t_vector	intersection;
-	double	dist;
+	double		dist;
 
 	if (prod_scal(*cyl.direction, dir->dir_pixel) == 0)
 		return ;
@@ -80,14 +82,15 @@ static void	intersection_cyl3(t_vector cam, t_dir_pixel *dir, t_cylinder cyl)
 	if (dist <= 0)
 		return ;
 	intersection = sum_vec(cam, prod_nb_vec(dist, dir->dir_pixel));
-	if (dist <= dir->dist
-		&& (norm_vec(diff_vec(intersection, h)) <= (cyl.diameter / 2)))
+	if (dist <= dir->dist && (norm_vec(diff_vec(intersection,
+					h)) <= (cyl.diameter / 2)))
 	{
 		dir->did_it_touch = 1;
 		dir->dist = dist;
 		dir->col_obj = color_to_int(*cyl.color);
 		*dir->intersection = intersection;
-		dir->n = get_normal_plan(*cyl.direction, diff_vec(*dir->intersection, cam));
+		dir->n = get_normal_plan(*cyl.direction, diff_vec(*dir->intersection,
+					cam));
 	}
 	return ;
 }

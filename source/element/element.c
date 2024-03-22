@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 02:14:10 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/01 04:49:21 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/22 18:38:31 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_element	*init_element(void)
 	return (new_element);
 }
 
-void clear_element(t_element *element)
+void	clear_element(t_element *element)
 {
 	if (element->identifier == ambient_light)
 		clear_ambient_light(element);

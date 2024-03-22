@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 04:32:04 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/03/13 11:00:45 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/22 18:42:17 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,20 +37,15 @@ static void	check_args(int argc, char **argv)
 int	main(int argc, char **argv)
 {
 	t_context	*context;
-	
+
 	check_args(argc, argv);
 	context = init_context(argv[1]);
 	if (run_lexer(context) == FAILURE)
 		lexer_error(context);
 	if (run_parser(context) == FAILURE)
 		lexer_error(context);
-	if (run_rendering(context) == FAILURE)
-		lexer_error(context);
-		// rendering_error(context);
-	if (run_window(context) == FAILURE)
-			lexer_error(context);
-		// window_error(context);
-	
+	run_rendering(context);
+	run_window(context);
 	clear_context(context);
 	printf("MiniRT exited successfully\n");
 	return (0);

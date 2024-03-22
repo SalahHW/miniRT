@@ -6,13 +6,14 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:56:47 by flmartin          #+#    #+#             */
-/*   Updated: 2024/03/11 17:07:04 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/22 18:17:08 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
 
-int	intersection_plan_bis(t_vector pos, t_vector dir, t_plane *plan, double distance)
+int	intersection_plan_bis(t_vector pos, t_vector dir, t_plane *plan,
+		double distance)
 {
 	double	dist;
 

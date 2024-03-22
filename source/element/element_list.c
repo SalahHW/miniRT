@@ -12,21 +12,21 @@
 
 #include "../../include/miniRT.h"
 
-static void update_list_count(t_element_list *list, t_element_identifier id)
+static void	update_list_count(t_element_list *list, t_element_identifier id)
 {
 	list->count++;
-    if (id == ambient_light)
-        list->ambient_light_count++;
-    else if (id == camera)
-        list->camera_count++;
-    else if (id == light)
-        list->light_count++;
-    else if (id == sphere)
-        list->sphere_count++;
-    else if (id == plane)
-        list->plane_count++;
-    else if (id == cylinder)
-        list->cylinder_count++;
+	if (id == ambient_light)
+		list->ambient_light_count++;
+	else if (id == camera)
+		list->camera_count++;
+	else if (id == light)
+		list->light_count++;
+	else if (id == sphere)
+		list->sphere_count++;
+	else if (id == plane)
+		list->plane_count++;
+	else if (id == cylinder)
+		list->cylinder_count++;
 }
 
 t_element_list	*init_element_list(void)

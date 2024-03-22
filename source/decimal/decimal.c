@@ -6,25 +6,25 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/28 05:44:29 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/28 04:24:42 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/22 18:24:54 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
 
-static double handle_simple_double(char *str)
+static double	handle_simple_double(char *str)
 {
-	double result;
+	double	result;
 
 	result = ft_atoi(str);
 	return (result);
 }
 
-static double handle_double(char *integer_part, char *decimal_part)
+static double	handle_double(char *integer_part, char *decimal_part)
 {
-	double result;
-	int integer;
-	int decimal;
+	double	result;
+	int		integer;
+	int		decimal;
 
 	integer = ft_atoi(integer_part);
 	decimal = ft_atoi(decimal_part);
@@ -36,12 +36,12 @@ static double handle_double(char *integer_part, char *decimal_part)
 
 double	string_to_double(char *str)
 {
-	char **split;
-	double result;
+	char	**split;
+	double	result;
 
 	split = ft_split(str, '.');
-    if (!split)
-        return (0);
+	if (!split)
+		return (0);
 	if (split_length(split) == 1)
 		result = handle_simple_double(split[0]);
 	else

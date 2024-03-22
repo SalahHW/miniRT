@@ -6,7 +6,7 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 15:54:24 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/28 10:17:43 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/22 18:14:07 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	check_ambient_light(t_element *element)
 {
-	t_ambient_light ambient_light;
+	t_ambient_light	ambient_light;
 
 	ambient_light = element->u_element.ambient_light;
 	if (ambient_light.intensity < 0 || ambient_light.intensity > 1)

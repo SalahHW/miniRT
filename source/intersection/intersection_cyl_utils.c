@@ -12,13 +12,13 @@
 
 #include "../../include/miniRT.h"
 
-// Cette fonction sert a delimiter la portion de la face laterale du cylindre 
+// Cette fonction sert a delimiter la portion de la face laterale du cylindre
 // car le cylindre a une hauteur FINIE.
 int	not_in_range(t_vector intersection, t_cylinder cyl)
 {
 	t_vector	cp;
-	double	prod;
-	double	tmp;
+	double		prod;
+	double		tmp;
 
 	cp = diff_vec(intersection, *cyl.position);
 	tmp = cyl.height / 2;

@@ -6,14 +6,14 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.fr>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:56:32 by flmartin          #+#    #+#             */
-/*   Updated: 2024/03/12 12:58:46 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/22 18:17:11 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
 
 int	intersection_sphere_bis(t_vector pos, t_vector dir, t_sphere *sphere,
-	double distance)
+		double distance)
 {
 	double	a;
 	double	b;

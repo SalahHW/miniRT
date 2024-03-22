@@ -6,13 +6,13 @@
 /*   By: sbouheni <sbouheni@student.42mulhouse.f    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/21 08:29:33 by sbouheni          #+#    #+#             */
-/*   Updated: 2024/02/28 04:46:00 by sbouheni         ###   ########.fr       */
+/*   Updated: 2024/03/22 18:39:11 by sbouheni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../include/miniRT.h"
 
-static int check_ambient_light_values(char **data)
+static int	check_ambient_light_values(char **data)
 {
 	if (split_length(data) != 3)
 		return (print_error("Invalid syntax for ambient light"));
@@ -25,7 +25,7 @@ static int check_ambient_light_values(char **data)
 
 int	process_ambient_light(char **data, t_element *element)
 {
-	t_ambient_light ambient_light;
+	t_ambient_light	ambient_light;
 
 	if (check_ambient_light_values(data) == FAILURE)
 		return (FAILURE);
@@ -36,9 +36,9 @@ int	process_ambient_light(char **data, t_element *element)
 	return (SUCCESS);
 }
 
-t_ambient_light *get_ambient_light(t_element_list *list)
+t_ambient_light	*get_ambient_light(t_element_list *list)
 {
-	t_element *current_element;
+	t_element	*current_element;
 
 	current_element = list->head;
 	while (current_element)
@@ -50,7 +50,7 @@ t_ambient_light *get_ambient_light(t_element_list *list)
 	return (NULL);
 }
 
-void clear_ambient_light(t_element *element)
+void	clear_ambient_light(t_element *element)
 {
 	if (!element->initialized)
 		return ;
